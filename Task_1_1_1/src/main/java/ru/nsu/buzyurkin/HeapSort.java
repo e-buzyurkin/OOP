@@ -8,7 +8,7 @@ public class HeapSort {
      * @param n            The size of the heap.
      * @param given_index The index of the current element to be considered as the root of the subtree.
      */
-    private static void heapify(int a[], int n, int given_index){
+    private static void heapify(int[] a, int n, int given_index) {
         int max_index = given_index;
         int l = 2 * max_index + 1;
         int r = 2 * max_index + 2;
@@ -35,14 +35,14 @@ public class HeapSort {
      *
      * @param a The array of integers to be sorted.
      */
-    public static void sort(int a[]){
+    public static void sort(int[] a) {
         int n = a.length;
 
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(a, n, i);
         }
 
-        for (int i = n - 1; i >= 0; i--){
+        for (int i = n - 1; i >= 0; i--) {
             int helper = a[0];
             a[0] = a[i];
             a[i] = helper;
