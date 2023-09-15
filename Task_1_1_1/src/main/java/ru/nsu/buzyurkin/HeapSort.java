@@ -1,6 +1,13 @@
 package ru.nsu.buzyurkin;
 
 public class HeapSort {
+    /**
+     * Heapify a subtree rooted with the given index to ensure it maintains the max heap property.
+     *
+     * @param a            The array containing the elements.
+     * @param n            The size of the heap.
+     * @param given_index The index of the current element to be considered as the root of the subtree.
+     */
     private static void heapify(int a[], int n, int given_index){
         int max_index = given_index;
         int l = 2 * max_index + 1;
@@ -21,6 +28,11 @@ public class HeapSort {
         }
     }
 
+    /**
+     * Sorts array in ascending order.
+     *
+     * @param a The array of integers to be sorted.
+     */
     public static void sort(int a[]){
         int n = a.length;
 
