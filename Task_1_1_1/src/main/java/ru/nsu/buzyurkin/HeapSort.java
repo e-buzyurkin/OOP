@@ -13,11 +13,13 @@ public class HeapSort {
         int l = 2 * max_index + 1;
         int r = 2 * max_index + 2;
 
-        if (l < n && a[l] > a[max_index])
+        if (l < n && a[l] > a[max_index]) {
             max_index = l;
+        }
 
-        if (r < n && a[r] > a[max_index])
+        if (r < n && a[r] > a[max_index]) {
             max_index = r;
+        }
 
         if (max_index != given_index) {
             int helper = a[given_index];
@@ -36,8 +38,9 @@ public class HeapSort {
     public static void sort(int a[]){
         int n = a.length;
 
-        for (int i = n / 2 - 1; i >= 0; i--)
+        for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(a, n, i);
+        }
 
         for (int i = n - 1; i >= 0; i--){
             int helper = a[0];
