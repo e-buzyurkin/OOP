@@ -37,15 +37,37 @@ public class HeapSortTest {
 
     @Test
     void test_3() {
-        int MAX = 100000;
-        int[] a = new int [MAX];
-        for (int i = 0; i < MAX; i++) {
+        int[] a = {};
+        HeapSort.sort(a);
+
+        if (a.length > 0) {
+            fail();
+        }
+    }
+
+    @Test
+    void test_4() {
+        int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        HeapSort.sort(a);
+
+        for (int i = 0; i < 10 - 1; i++) {
+            if (a[i] > a[i + 1]) {
+                fail();
+            }
+        }
+    }
+
+    @Test
+    void test_final() {
+        int Max = 100000;
+        int[] a = new int [Max];
+        for (int i = 0; i < Max; i++) {
             a[i] = (int) (Math.random() * 1000000 * Math.pow(-1, i));
         }
 
         HeapSort.sort(a);
 
-        for (int i = 0; i < MAX - 1; i++) {
+        for (int i = 0; i < Max - 1; i++) {
             if (a[i] > a[i + 1]) {
                 fail();
             }

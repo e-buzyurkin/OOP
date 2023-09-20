@@ -2,35 +2,6 @@ package ru.nsu.buzyurkin;
 
 public class HeapSort {
     /**
-     * Heapify a subtree rooted with the given index to ensure it maintains the max heap property.
-     *
-     * @param a            The array containing the elements.
-     * @param n            The size of the heap.
-     * @param given_index The index of the current element to be considered as the root of the subtree.
-     */
-    private static void heapify(int[] a, int n, int given_index) {
-        int max_index = given_index;
-        int l = 2 * max_index + 1;
-        int r = 2 * max_index + 2;
-
-        if (l < n && a[l] > a[max_index]) {
-            max_index = l;
-        }
-
-        if (r < n && a[r] > a[max_index]) {
-            max_index = r;
-        }
-
-        if (max_index != given_index) {
-            int helper = a[given_index];
-            a[given_index] = a[max_index];
-            a[max_index] = helper;
-
-            heapify(a, n, max_index);
-        }
-    }
-
-    /**
      * Sorts array in ascending order.
      *
      * @param a The array of integers to be sorted.
@@ -48,6 +19,35 @@ public class HeapSort {
             a[i] = helper;
 
             heapify(a, i, 0);
+        }
+    }
+
+    /**
+     * Heapify a subtree rooted with the given index to ensure it maintains the max heap property.
+     *
+     * @param a            The array containing the elements.
+     * @param n            The size of the heap.
+     * @param givenIndex The index of the current element to be considered as the root of the subtree.
+     */
+    private static void heapify(int[] a, int n, int givenIndex) {
+        int maxIndex = givenIndex;
+        int l = 2 * maxIndex + 1;
+        int r = 2 * maxIndex + 2;
+
+        if (l < n && a[l] > a[maxIndex]) {
+            maxIndex = l;
+        }
+
+        if (r < n && a[r] > a[maxIndex]) {
+            maxIndex = r;
+        }
+
+        if (maxIndex != givenIndex) {
+            int helper = a[givenIndex];
+            a[givenIndex] = a[maxIndex];
+            a[maxIndex] = helper;
+
+            heapify(a, n, maxIndex);
         }
     }
 }
