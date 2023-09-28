@@ -55,19 +55,19 @@ public class PolynomialTest {
     @Test
     void test_equality() {
         Polynomial p1 = new Polynomial(new int[] {10, -5, 3});
-        assertTrue(p1.isEqual(p1));
+        assertTrue(p1.equals(p1));
 
         Polynomial p2 = new Polynomial(new int[] {10, -5, 3, 0, 0});
-        assertTrue(p1.isEqual(p2));
-        assertTrue(p2.isEqual(p1));
+        assertTrue(p1.equals(p2));
+        assertTrue(p2.equals(p1));
 
         Polynomial p3 = new Polynomial(new int[] {0, 10, 3, 7, 11});
-        assertFalse(p1.isEqual(p3));
-        assertFalse(p3.isEqual(p1));
+        assertFalse(p1.equals(p3));
+        assertFalse(p3.equals(p1));
 
         Polynomial p4 = new Polynomial(new int[] {103, -10, 40, 0, 10, 3, 7, 11});
-        assertFalse(p1.isEqual(p4));
-        assertFalse(p4.isEqual(p1));
+        assertFalse(p1.equals(p4));
+        assertFalse(p4.equals(p1));
     }
 
     @Test

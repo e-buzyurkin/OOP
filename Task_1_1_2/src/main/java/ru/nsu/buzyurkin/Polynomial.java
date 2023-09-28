@@ -1,7 +1,7 @@
 package ru.nsu.buzyurkin;
 
 public class Polynomial {
-    int[] coefs;
+    private int[] coefs;
 
     /**
      * Constructs a Polynomial object with the given coefficients.
@@ -133,7 +133,13 @@ public class Polynomial {
      * @param givenPoly The polynomial to be compared with.
      * @return true if the two polynomials are equal, false otherwise.
      */
-    public boolean isEqual(Polynomial givenPoly) {
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this.getClass() != obj.getClass())
+            return false;
+
+        Polynomial givenPoly = (Polynomial) obj;
         int minLen = Math.min(this.coefs.length, givenPoly.coefs.length);
 
         for (int i = 0; i < minLen; i++) {
@@ -166,6 +172,8 @@ public class Polynomial {
      *
      * @return A string representing the polynomial in a human-friendly form.
      */
+
+    @Override
     public String toString() {
         int degree = this.coefs.length - 1;
         String res = "";
