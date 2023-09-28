@@ -9,7 +9,7 @@ public class Polynomial {
      * @param givenCoefs An array of integers representing the coefficients
      *                   of the polynomial from the highest degree to the constant term.
      */
-    Polynomial(int[] givenCoefs){
+    Polynomial(int[] givenCoefs) {
         coefs = new int[givenCoefs.length];
         System.arraycopy(givenCoefs, 0, this.coefs, 0, givenCoefs.length);
     }
@@ -88,7 +88,7 @@ public class Polynomial {
      */
     public double evaluate(double x) {
         double res = 0;
-        for (int i = 0; i < coefs.length; i++){
+        for (int i = 0; i < coefs.length; i++) {
             res += this.coefs[i] * Math.pow(x, i);
         }
 
@@ -130,14 +130,15 @@ public class Polynomial {
     /**
      * Checks if this polynomial is equal to the given polynomial.
      *
-     * @param givenPoly The polynomial to be compared with.
+     * @param obj The polynomial to be compared with.
      * @return true if the two polynomials are equal, false otherwise.
      */
 
     @Override
     public boolean equals(Object obj) {
-        if (this.getClass() != obj.getClass())
+        if (this.getClass() != obj.getClass()) {
             return false;
+        }
 
         Polynomial givenPoly = (Polynomial) obj;
         int minLen = Math.min(this.coefs.length, givenPoly.coefs.length);
@@ -149,7 +150,7 @@ public class Polynomial {
         }
 
         if (this.coefs.length > givenPoly.coefs.length) {
-            for (int i = this.coefs.length - 1; i >= minLen; i--){
+            for (int i = this.coefs.length - 1; i >= minLen; i--) {
                 if (this.coefs[i] != 0) {
                     return false;
                 }
@@ -157,7 +158,7 @@ public class Polynomial {
         }
 
         if (this.coefs.length < givenPoly.coefs.length) {
-            for (int i = givenPoly.coefs.length - 1; i >= minLen; i--){
+            for (int i = givenPoly.coefs.length - 1; i >= minLen; i--) {
                 if (givenPoly.coefs[i] != 0) {
                     return false;
                 }
