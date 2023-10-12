@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.nsu.buzyurkin.Tree;
-
 import java.util.*;
 
 public class TreeTest {
@@ -100,7 +99,7 @@ public class TreeTest {
      * Test case for iterating the entire tree using Depth-First Search (DFS) order.
      */
     @Test
-    void test_iteratorWholeTreeDFS() {
+    void test_iteratorWholeTreeDfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -109,11 +108,11 @@ public class TreeTest {
         b1.addChild("E");
         b1.addChild("F");
 
-        Iterator<String> iteratorDFS = tree.iterator();
+        Iterator<String> iteratorDfs = tree.iterator();
         int size = 0;
-        while (iteratorDFS.hasNext()) {
+        while (iteratorDfs.hasNext()) {
             size++;
-            iteratorDFS.next();
+            iteratorDfs.next();
         }
 
         assertEquals(7, size);
@@ -123,7 +122,7 @@ public class TreeTest {
      * Test case for iterating the entire tree using Breadth-First Search (BFS) order.
      */
     @Test
-    void test_iteratorWholeTreeBFS() {
+    void test_iteratorWholeTreeBfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -132,11 +131,11 @@ public class TreeTest {
         b1.addChild("E");
         b1.addChild("F");
 
-        Iterator<String> iteratorBFS = tree.iteratorBFS();
+        Iterator<String> iteratorBfs = tree.iteratorBfs();
         int size = 0;
-        while (iteratorBFS.hasNext()) {
+        while (iteratorBfs.hasNext()) {
             size++;
-            iteratorBFS.next();
+            iteratorBfs.next();
         }
 
         assertEquals(7, size);
@@ -146,7 +145,7 @@ public class TreeTest {
      * Test case for checking the order of elements when iterating the tree using DFS.
      */
     @Test
-    void test_iteratorRightOrderDFS() {
+    void test_iteratorRightOrderDfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -155,13 +154,13 @@ public class TreeTest {
         b1.addChild("E");
         b1.addChild("F");
 
-        Iterator<String> iteratorDFS = tree.iterator();
+        Iterator<String> iteratorDfs = tree.iterator();
         int step = 3;
         String val = "";
         while (step > 0) {
             step--;
-            if (iteratorDFS.hasNext()) {
-                val = iteratorDFS.next();
+            if (iteratorDfs.hasNext()) {
+                val = iteratorDfs.next();
             }
         }
 
@@ -169,10 +168,11 @@ public class TreeTest {
     }
 
     /**
-     * Test case for ensuring no exceptions are thrown when iterating after tree modification using DFS.
+     * Test case for ensuring no exceptions are thrown when iterating
+     *      after tree modification using DFS.
      */
     @Test
-    public void test_iteratorNoExceptionDFS() {
+    public void test_iteratorNoExceptionDfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -195,7 +195,7 @@ public class TreeTest {
      * Test case for checking exceptions when iterating after tree modification using DFS.
      */
     @Test
-    public void test_iteratorExceptionDFS() {
+    public void test_iteratorExceptionDfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -215,10 +215,11 @@ public class TreeTest {
     }
 
     /**
-     * Test case for ensuring no exceptions are thrown when iterating after tree modification using BFS.
+     * Test case for ensuring no exceptions are thrown when iterating
+     *      after tree modification using BFS.
      */
     @Test
-    public void test_iteratorNoExceptionBFS() {
+    public void test_iteratorNoExceptionBfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -227,7 +228,7 @@ public class TreeTest {
         b1.addChild("E");
         b1.addChild("F");
 
-        Iterator<String> iteratorA = a1.iteratorBFS();
+        Iterator<String> iteratorA = a1.iteratorBfs();
 
         assertDoesNotThrow(() -> {
             b1.addChild("other");
@@ -241,7 +242,7 @@ public class TreeTest {
      * Test case for checking exceptions when iterating after tree modification using BFS.
      */
     @Test
-    public void test_iteratorExceptionBFS() {
+    public void test_iteratorExceptionBfs() {
         Tree<String> tree = new Tree<>("R1");
         var a1 = tree.addChild("A");
         var b1 = tree.addChild("B");
@@ -250,7 +251,7 @@ public class TreeTest {
         b1.addChild("E");
         b1.addChild("F");
 
-        Iterator<String> iteratorA = b1.iteratorBFS();
+        Iterator<String> iteratorA = b1.iteratorBfs();
 
         assertThrows(ConcurrentModificationException.class, () -> {
             b1.addChild("other");

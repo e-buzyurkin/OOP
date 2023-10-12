@@ -2,7 +2,7 @@ package ru.nsu.buzyurkin;
 
 import java.util.*;
 
-public class Tree<T> implements Iterable<T>{
+public class Tree<T> implements Iterable<T> {
 
     private T value;
     private Tree<T> parent;
@@ -18,6 +18,10 @@ public class Tree<T> implements Iterable<T>{
         incAncestorsModCount(current.parent);
     }
 
+    /**
+     * Creates a new tree with given value.
+     * @param value The value of new tree's root.
+     */
     public Tree(T value) {
         this.value = value;
         this.parent = null;
@@ -135,19 +139,19 @@ public class Tree<T> implements Iterable<T>{
      */
     @Override
     public Iterator<T> iterator() {
-        return new DFSIterator();
+        return new DfsIterator();
     }
 
     /**
      * An iterator for traversing the tree in a Depth-First Search (DFS) order.
      * It allows iterating over the elements in the tree from top to bottom and left to right.
      */
-    private class DFSIterator implements Iterator<T> {
+    private class DfsIterator implements Iterator<T> {
         private Stack<Tree<T>> stack;
-        private int modifyCountDFS;
+        private int modifyCountDfs;
 
-        public DFSIterator() {
-            modifyCountDFS = modifyCount;
+        public DfsIterator() {
+            modifyCountDfs = modifyCount;
 
             stack = new Stack<>();
             if (value != null) {
@@ -157,7 +161,7 @@ public class Tree<T> implements Iterable<T>{
 
         @Override
         public boolean hasNext() {
-            if (modifyCount != modifyCountDFS) {
+            if (modifyCount != modifyCountDfs) {
                 throw new ConcurrentModificationException();
             }
 
@@ -172,7 +176,9 @@ public class Tree<T> implements Iterable<T>{
             Tree<T> current = stack.pop();
 
             // Push children in reverse order to traverse left to right
-            ListIterator<Tree<T>> childrenIterator = current.children.listIterator(current.children.size());
+            ListIterator<Tree<T>> childrenIterator;
+            childrenIterator = current.children.listIterator(current.children.size());
+
             while (childrenIterator.hasPrevious()) {
                 stack.push(childrenIterator.previous());
             }
@@ -191,20 +197,20 @@ public class Tree<T> implements Iterable<T>{
      *
      * @return A BFS iterator for the tree.
      */
-    public Iterator<T> iteratorBFS() {
-        return new BFSIterator();
+    public Iterator<T> iteratorBfs() {
+        return new BfsIterator();
     }
 
     /**
      * An iterator for traversing the tree in a Breadth-First Search (BFS) order.
      * It allows iterating over the elements in the tree level by level, from left to right.
      */
-    private class BFSIterator implements Iterator<T> {
+    private class BfsIterator implements Iterator<T> {
         private Queue<Tree<T>> queue;
-        private int modifyCountBFS;
+        private int modifyCountBfs;
 
-        public BFSIterator() {
-            modifyCountBFS = modifyCount;
+        public BfsIterator() {
+            modifyCountBfs = modifyCount;
 
             queue = new LinkedList<>();
             if (value != null) {
@@ -214,7 +220,7 @@ public class Tree<T> implements Iterable<T>{
 
         @Override
         public boolean hasNext() {
-            if (modifyCount != modifyCountBFS) {
+            if (modifyCount != modifyCountBfs) {
                 throw new ConcurrentModificationException();
             }
 
