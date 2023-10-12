@@ -1,6 +1,7 @@
 package ru.nsu.buzyurkin;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Tree<T> implements Iterable<T> {
 
@@ -100,8 +101,12 @@ public class Tree<T> implements Iterable<T> {
             return false;
         }
 
-        List<T> thisTreeValues = this.children.stream().map(tree -> tree.value).toList();
-        List<T> otherTreeValues = otherTree.children.stream().map(tree -> tree.value).toList();
+        List<T> thisTreeValues = this.children.stream()
+                                    .map(tree -> tree.value)
+                                    .collect(Collectors.toList());
+        List<T> otherTreeValues = otherTree.children.stream()
+                                    .map(tree -> tree.value)
+                                    .collect(Collectors.toList());
 
         if (!equalLists(thisTreeValues, otherTreeValues)) {
             return false;
