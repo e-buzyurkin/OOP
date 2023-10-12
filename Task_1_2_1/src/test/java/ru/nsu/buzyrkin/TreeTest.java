@@ -1,11 +1,9 @@
 package ru.nsu.buzyrkin;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.nsu.buzyurkin.Tree;
 import java.util.*;
+import ru.nsu.buzyurkin.Tree;
 
 public class TreeTest {
 
