@@ -260,13 +260,13 @@ public class GraphTests {
                             node1Edges.stream()
                                     .map((Pair<Node<Integer>, Edge<Integer>> pair) ->
                                             pair.getLeft().getValue())
-                                    .toList();
+                                    .collect(Collectors.toList());
 
                     List<Integer> node2EdgesNodes =
                             node2Edges.stream()
                                     .map((Pair<Node<Integer>, Edge<Integer>> pair) ->
                                             pair.getLeft().getValue())
-                                    .toList();
+                                    .collect(Collectors.toList());
 
                     if (!equalLists(node1EdgesNodes, node1EdgesNodes)) {
                         return false;
