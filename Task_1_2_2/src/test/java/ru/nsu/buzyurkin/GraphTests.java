@@ -3,9 +3,7 @@ package ru.nsu.buzyurkin;
 
 import java.io.FileNotFoundException;
 import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.*;
@@ -80,7 +78,7 @@ public class GraphTests {
     void testAdjListsEdges() {
         List<Edge<Integer>> edges = adjListsGraph.getEdges();
 
-        var edgesValues = edges.stream().map(Edge::getWeight).toList();
+        var edgesValues = edges.stream().map(Edge::getWeight).collect(Collectors.toList());
         List<Integer> correctEdges = List.of(2, 1, 1, 2, 1, 1);
         assertTrue(equalLists(correctEdges, edgesValues));
     }
@@ -92,7 +90,7 @@ public class GraphTests {
     void testAdjMatrixEdges() {
         List<Edge<Integer>> edges = adjMatrixGraph.getEdges();
 
-        var edgesValues = edges.stream().map(Edge::getWeight).toList();
+        var edgesValues = edges.stream().map(Edge::getWeight).collect(Collectors.toList());
         List<Integer> correctEdges = List.of(2, 1, 1, 2, 1, 1);
         assertTrue(equalLists(correctEdges, edgesValues));
     }
@@ -104,7 +102,7 @@ public class GraphTests {
     void testIncMatrixEdges() {
         List<Edge<Integer>> edges = incMatrixGraph.getEdges();
 
-        var edgesValues = edges.stream().map(Edge::getWeight).toList();
+        var edgesValues = edges.stream().map(Edge::getWeight).collect(Collectors.toList());
         List<Integer> correctEdges = List.of(2, 1, 1, 2, 1, 1);
         assertTrue(equalLists(correctEdges, edgesValues));
     }
@@ -239,10 +237,10 @@ public class GraphTests {
 
         List<Integer> graph1Vertices = graph1.getVertices()
                                        .stream().map(Node::getValue)
-                                       .toList();
+                                       .collect(Collectors.toList());
         List<Integer> graph2Vertices = graph2.getVertices()
                                        .stream().map(Node::getValue)
-                                       .toList();
+                                       .collect(Collectors.toList());
 
         if (!equalLists(graph1Vertices, graph2Vertices)) {
             return false;
@@ -278,13 +276,13 @@ public class GraphTests {
                             node1Edges.stream()
                                     .map((Pair<Node<Integer>, Edge<Integer>> pair) ->
                                             pair.getRight().getWeight())
-                                    .toList();
+                                    .collect(Collectors.toList());
 
                     List<Integer> node2EdgesWeights =
                             node2Edges.stream()
                                     .map((Pair<Node<Integer>, Edge<Integer>> pair) ->
                                             pair.getRight().getWeight())
-                                    .toList();
+                                    .collect(Collectors.toList());
 
                     if (!equalLists(node1EdgesWeights, node1EdgesWeights)) {
                         return false;
