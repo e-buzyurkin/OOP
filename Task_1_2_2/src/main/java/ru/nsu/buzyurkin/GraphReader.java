@@ -4,8 +4,18 @@ import java.io.FileNotFoundException;
 import java.io.File;
 import java.util.*;
 
+/**
+ * This class provides methods for reading a graph from a file and populating a graph data structure.
+ */
 public class GraphReader {
 
+    /**
+     * Reads a graph from a file and populates the provided graph data structure.
+     *
+     * @param filename The name of the file containing the graph data.
+     * @param graph The graph data structure to populate with the graph data.
+     * @throws FileNotFoundException If the specified file is not found.
+     */
     static void readGraphFromFile(String filename, Graph<Integer, Integer> graph) {
         Scanner scanner;
         try {
@@ -22,8 +32,8 @@ public class GraphReader {
         }
 
         for (int i = 0; i < edgesCount; i++) {
-            Node<Integer> u = new Node<>(scanner.nextInt());
-            Node<Integer> v = new Node<>(scanner.nextInt());
+            Node<Integer> u = graph.getVertex(scanner.nextInt());
+            Node<Integer> v = graph.getVertex(scanner.nextInt());
             int w = scanner.nextInt();
 
             graph.addEdge(u, v, w);
