@@ -124,7 +124,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>V</code> - The type of values stored in the graph's nodes.</dd>
-<dd><code>W</code> - The type of weights associated with the graph's edges (must be a subclass of Number).</dd>
+<dd><code>W</code> - The type of weights associated
+              with the graph's edges (must be a subclass of Number).</dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -132,7 +133,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">Graph&lt;V,&#8203;W extends java.lang.Number&gt;</span></pre>
-<div class="block">This interface represents a generic graph structure, allowing the manipulation of vertices and edges.</div>
+<div class="block">This interface represents a generic graph structure,
+              allowing the manipulation of vertices and edges.</div>
 </li>
 </ul>
 </div>
@@ -209,7 +211,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>java.util.List&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">W</a>&gt;&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOutgoingEdges(ru.nsu.buzyurkin.Node)">getOutgoingEdges</a></span>&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;node)</code></th>
 <td class="colLast">
-<div class="block">Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.</div>
+<div class="block">Retrieves a list of outgoing edges from the specified node,
+                          along with the corresponding target nodes.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -326,12 +329,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>getOutgoingEdges</h4>
 <pre class="methodSignature">java.util.List&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">W</a>&gt;&gt;&gt;&nbsp;getOutgoingEdges&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;node)</pre>
-<div class="block">Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.</div>
+<div class="block">Retrieves a list of outgoing edges from the specified node,
+                          along with the corresponding target nodes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>node</code> - The node for which outgoing edges are to be retrieved.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A list of pairs containing the target node and the outgoing edge from the specified node.</dd>
+<dd>A list of pairs containing the target node
+              and the outgoing edge from the specified node.</dd>
 </dl>
 </li>
 </ul>
@@ -364,22 +369,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The count of edges in the graph.</dd>
-</dl>
-</li>
-</ul>
-<a id="contains(ru.nsu.buzyurkin.Edge)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>contains</h4>
-<pre class="methodSignature">default&nbsp;boolean&nbsp;contains&#8203;(<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">W</a>&gt;&nbsp;edge)</pre>
-<div class="block">Checks if the graph contains the specified edge.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>edge</code> - The edge to be checked for existence in the graph.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the edge is present in the graph, false otherwise.</dd>
 </dl>
 </li>
 </ul>
@@ -460,6 +449,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The count of vertices in the graph.</dd>
+</dl>
+</li>
+</ul>
+<a id="contains(ru.nsu.buzyurkin.Edge)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>contains</h4>
+<pre class="methodSignature">default&nbsp;boolean&nbsp;contains&#8203;(<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">W</a>&gt;&nbsp;edge)</pre>
+<div class="block">Checks if the graph contains the specified edge.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>edge</code> - The edge to be checked for existence in the graph.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if the edge is present in the graph, false otherwise.</dd>
 </dl>
 </li>
 </ul>

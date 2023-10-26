@@ -132,7 +132,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>V</code> - The type of values stored in the graph's nodes.</dd>
-<dd><code>W</code> - The type of weights associated with the graph's edges (must be a subclass of Number).</dd>
+<dd><code>W</code> - The type of weights associated with the graph's edges
+              (must be a subclass of Number).</dd>
 </dl>
 <dl>
 <dt>All Implemented Interfaces:</dt>
@@ -228,7 +229,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <td class="colFirst"><code>java.util.List&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOutgoingEdges(ru.nsu.buzyurkin.Node)">getOutgoingEdges</a></span>&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;node)</code></th>
 <td class="colLast">
-<div class="block">Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.</div>
+<div class="block">Retrieves a list of outgoing edges from the specified node,
+              along with the corresponding target nodes.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -358,7 +360,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <dd><code>u</code> - The source node.</dd>
 <dd><code>v</code> - The target node.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The edge between the specified nodes, or null if it does not exist or if u is null.</dd>
+<dd>The edge between the specified nodes, or null
+          if it does not exist or if u is null.</dd>
 </dl>
 </li>
 </ul>
@@ -385,14 +388,16 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <li class="blockList">
 <h4>getOutgoingEdges</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;&gt;&gt;&nbsp;getOutgoingEdges&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;node)</pre>
-<div class="block">Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.</div>
+<div class="block">Retrieves a list of outgoing edges from the specified node,
+              along with the corresponding target nodes.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#getOutgoingEdges(ru.nsu.buzyurkin.Node)">getOutgoingEdges</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>,&#8203;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>node</code> - The node for which outgoing edges are to be retrieved.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A list of pairs containing the target node and the outgoing edge from the specified node.</dd>
+<dd>A list of pairs containing the target node
+          and the outgoing edge from the specified node.</dd>
 </dl>
 </li>
 </ul>
@@ -412,7 +417,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <dd><code>u</code> - The source node.</dd>
 <dd><code>v</code> - The target node.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the edge was successfully removed, false if the edge does not exist or if u is null.</dd>
+<dd>True if the edge was successfully removed,
+          false if the edge does not exist or if u is null.</dd>
 </dl>
 </li>
 </ul>
@@ -502,7 +508,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>node</code> - The node to be removed from the graph.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the vertex was successfully removed, false if the vertex does not exist or if node is null.</dd>
+<dd>True if the vertex was successfully removed,
+          false if the vertex does not exist or if node is null.</dd>
 </dl>
 </li>
 </ul>
