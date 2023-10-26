@@ -1,21 +1,23 @@
 package ru.nsu.buzyurkin;
 
 
-import java.io.FileNotFoundException;
-import java.util.*;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.*;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * This class contains unit tests for various graph operations and algorithms.
  */
 public class GraphTests {
-    private Graph<Integer, Integer> adjListsGraph = new AdjacencyListsGraph<>();
-    private Graph<Integer, Integer> incMatrixGraph = new IncidencyMatrixGraph<>();
-    private Graph<Integer, Integer> adjMatrixGraph = new AdjacencyMatrixGraph<>();
+    private final Graph<Integer, Integer> adjListsGraph = new AdjacencyListsGraph<>();
+    private final Graph<Integer, Integer> incMatrixGraph = new IncidencyMatrixGraph<>();
+    private final Graph<Integer, Integer> adjMatrixGraph = new AdjacencyMatrixGraph<>();
 
     /**
      * Reads graphs from files before running each test.
@@ -236,11 +238,11 @@ public class GraphTests {
         }
 
         List<Integer> graph1Vertices = graph1.getVertices()
-                                       .stream().map(Node::getValue)
-                                       .collect(Collectors.toList());
+                .stream().map(Node::getValue)
+                .collect(Collectors.toList());
         List<Integer> graph2Vertices = graph2.getVertices()
-                                       .stream().map(Node::getValue)
-                                       .collect(Collectors.toList());
+                .stream().map(Node::getValue)
+                .collect(Collectors.toList());
 
         if (!equalLists(graph1Vertices, graph2Vertices)) {
             return false;

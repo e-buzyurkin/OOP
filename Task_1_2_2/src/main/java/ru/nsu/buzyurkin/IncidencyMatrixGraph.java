@@ -26,7 +26,7 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
      * @param u The source node.
      * @param v The target node.
      * @return The edge between the specified nodes,
-     * or null if it does not exist or if u or v is null.
+     *          or null if it does not exist or if u or v is null.
      */
     @Override
     public Edge<W> getEdge(Node<V> u, Node<V> v) {
@@ -163,7 +163,7 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
      *
      * @param node The node to be removed from the graph.
      * @return True if the vertex was successfully removed,
-     * false if the vertex does not exist or if node is null.
+     *          false if the vertex does not exist or if node is null.
      */
     @Override
     public boolean removeVertex(Node<V> node) {

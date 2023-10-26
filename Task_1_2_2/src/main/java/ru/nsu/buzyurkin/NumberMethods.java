@@ -34,9 +34,9 @@ public class NumberMethods<T extends Number & Comparable> implements Comparator<
     public T plus(T a, T b) {
         if (a instanceof Double || b instanceof Double) {
             return (T) Double.valueOf(a.doubleValue() + b.doubleValue());
-        } else if(a instanceof Float || b instanceof Float) {
+        } else if (a instanceof Float || b instanceof Float) {
             return (T) Float.valueOf(a.floatValue() + b.floatValue());
-        } else if(a instanceof Long || b instanceof Long) {
+        } else if (a instanceof Long || b instanceof Long) {
             return (T) Long.valueOf(a.longValue() + b.longValue());
         } else {
             return (T) Integer.valueOf(a.intValue() + b.intValue());
