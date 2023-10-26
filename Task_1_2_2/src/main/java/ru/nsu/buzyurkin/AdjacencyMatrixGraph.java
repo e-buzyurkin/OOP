@@ -9,12 +9,14 @@ import java.util.Map;
  * This class represents an implementation of a graph using an adjacency matrix.
  *
  * @param <V> The type of values stored in the graph's nodes.
- * @param <W> The type of weights associated with the graph's edges (must be a subclass of Number).
+ * @param <W> The type of weights associated with the graph's edges
+ *                  (must be a subclass of Number).
  */
 public class AdjacencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     /**
      * A map representing the adjacency matrix for the graph.
-     * The keys are source nodes, and the values are maps that store target nodes and their corresponding edges.
+     * The keys are source nodes, and the values are maps
+     *          that store target nodes and their corresponding edges.
      */
     private final Map<Node<V>, Map<Node<V>, Edge<W>>> adjacencyMatrix;
 
@@ -51,7 +53,8 @@ public class AdjacencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
      *
      * @param u The source node.
      * @param v The target node.
-     * @return The edge between the specified nodes, or null if it does not exist or if u or v is null.
+     * @return The edge between the specified nodes,
+     *          or null if it does not exist or if u or v is null.
      */
     @Override
     public Edge<W> getEdge(Node<V> u, Node<V> v) {
@@ -87,10 +90,12 @@ public class AdjacencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
-     * Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.
+     * Retrieves a list of outgoing edges from the specified node,
+     *          along with the corresponding target nodes.
      *
      * @param node The node for which outgoing edges are to be retrieved.
-     * @return A list of pairs containing the target node and the outgoing edge from the specified node,
+     * @return A list of pairs containing the target node
+     *          and the outgoing edge from the specified node,
      *         or null if the node is not found in the graph.
      */
 
@@ -117,7 +122,8 @@ public class AdjacencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
      *
      * @param u The source node.
      * @param v The target node.
-     * @return True if the edge was successfully removed, false if the edge does not exist or if u or v is null.
+     * @return True if the edge was successfully removed,
+     *          false if the edge does not exist or if u or v is null.
      */
     @Override
     public boolean removeEdge(Node<V> u, Node<V> v) {
@@ -199,7 +205,8 @@ public class AdjacencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
      * Removes the specified vertex from the graph, along with all incident edges.
      *
      * @param node The node to be removed from the graph.
-     * @return True if the vertex was successfully removed, false if the vertex does not exist or if node is null.
+     * @return True if the vertex was successfully removed,
+     *      false if the vertex does not exist or if node is null.
      */
     @Override
     public boolean removeVertex(Node<V> node) {

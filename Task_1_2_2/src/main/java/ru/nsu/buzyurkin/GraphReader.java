@@ -1,11 +1,12 @@
 package ru.nsu.buzyurkin;
 
-import java.io.FileNotFoundException;
 import java.io.File;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
- * This class provides methods for reading a graph from a file and populating a graph data structure.
+ * This class provides methods for reading a graph
+ *          from a file and populating a graph data structure.
  */
 public class GraphReader {
 

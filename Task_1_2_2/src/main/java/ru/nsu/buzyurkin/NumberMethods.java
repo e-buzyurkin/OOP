@@ -3,18 +3,22 @@ package ru.nsu.buzyurkin;
 import java.util.Comparator;
 
 /**
- * This class provides utility methods for working with numbers, including comparison and addition operations.
+ * This class provides utility methods for working with numbers,
+ *          including comparison and addition operations.
  *
- * @param <T> The type of numbers on which the methods operate, must be a subclass of Number and Comparable.
+ * @param <T> The type of numbers on which the methods operate,
+ *              must be a subclass of Number and Comparable.
  */
 public class NumberMethods<T extends Number & Comparable> implements Comparator<T> {
     /**
-     * Compares two numbers and returns a negative value if 'a' is less than 'b', 0 if they are equal,
+     * Compares two numbers and returns a negative value if 'a' is less than 'b',
+     * 0 if they are equal,
      * and a positive value if 'a' is greater than 'b'.
      *
      * @param a The first number to compare.
      * @param b The second number to compare.
-     * @return A negative integer, zero, or a positive integer as 'a' is less than, equal to, or greater than 'b'.
+     * @return A negative integer, zero, or a positive integer
+     *          as 'a' is less than, equal to, or greater than 'b'.
      */
     public int compare(T a, T b) {
         return a.compareTo(b);

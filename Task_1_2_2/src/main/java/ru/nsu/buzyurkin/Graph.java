@@ -3,10 +3,12 @@ package ru.nsu.buzyurkin;
 import java.util.List;
 
 /**
- * This interface represents a generic graph structure, allowing the manipulation of vertices and edges.
+ * This interface represents a generic graph structure,
+ *              allowing the manipulation of vertices and edges.
  *
  * @param <V> The type of values stored in the graph's nodes.
- * @param <W> The type of weights associated with the graph's edges (must be a subclass of Number).
+ * @param <W> The type of weights associated
+ *              with the graph's edges (must be a subclass of Number).
  */
 
 public interface Graph<V, W extends Number> {
@@ -27,7 +29,7 @@ public interface Graph<V, W extends Number> {
      * @param v The target node.
      * @return The edge between the specified nodes, or null if it does not exist.
      */
-    Edge<W> getEdge(Node <V> u, Node<V> v);
+    Edge<W> getEdge(Node<V> u, Node<V> v);
 
     /**
      * Retrieves a list of all edges in the graph.
@@ -37,10 +39,12 @@ public interface Graph<V, W extends Number> {
     List<Edge<W>> getEdges();
 
     /**
-     * Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.
+     * Retrieves a list of outgoing edges from the specified node,
+     *                          along with the corresponding target nodes.
      *
      * @param node The node for which outgoing edges are to be retrieved.
-     * @return A list of pairs containing the target node and the outgoing edge from the specified node.
+     * @return A list of pairs containing the target node
+     *              and the outgoing edge from the specified node.
      */
     List<Pair<Node<V>, Edge<W>>> getOutgoingEdges(Node<V> node);
 
@@ -59,16 +63,6 @@ public interface Graph<V, W extends Number> {
      * @return The count of edges in the graph.
      */
     int getEdgesCount();
-
-    /**
-     * Checks if the graph contains the specified edge.
-     *
-     * @param edge The edge to be checked for existence in the graph.
-     * @return True if the edge is present in the graph, false otherwise.
-     */
-    default boolean contains(Edge<W> edge) {
-        return getEdges().contains(edge);
-    }
 
     /**
      * Adds a vertex to the graph with the specified value.
@@ -107,6 +101,16 @@ public interface Graph<V, W extends Number> {
      * @return The count of vertices in the graph.
      */
     int getVertexCount();
+
+    /**
+     * Checks if the graph contains the specified edge.
+     *
+     * @param edge The edge to be checked for existence in the graph.
+     * @return True if the edge is present in the graph, false otherwise.
+     */
+    default boolean contains(Edge<W> edge) {
+        return getEdges().contains(edge);
+    }
 
     /**
      * Checks if the graph contains the specified vertex.

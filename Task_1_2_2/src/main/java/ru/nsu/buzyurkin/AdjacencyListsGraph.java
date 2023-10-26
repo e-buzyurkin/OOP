@@ -1,17 +1,22 @@
 package ru.nsu.buzyurkin;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This class represents an implementation of a graph using adjacency lists.
  *
  * @param <V> The type of values stored in the graph's nodes.
- * @param <W> The type of weights associated with the graph's edges (must be a subclass of Number).
+ * @param <W> The type of weights associated with the graph's edges
+ *              (must be a subclass of Number).
  */
 public class AdjacencyListsGraph<V, W extends Number> implements Graph<V, W> {
     /**
      * A map that represents the adjacency lists for each node in the graph.
-     * The keys are nodes, and the values are lists of pairs consisting of target nodes and corresponding edges.
+     * The keys are nodes, and the values are lists of pairs
+     *              consisting of target nodes and corresponding edges.
      */
     private final Map<Node<V>, List<Pair<Node<V>, Edge<W>>>> adjacencyLists;
 
@@ -48,7 +53,8 @@ public class AdjacencyListsGraph<V, W extends Number> implements Graph<V, W> {
      *
      * @param u The source node.
      * @param v The target node.
-     * @return The edge between the specified nodes, or null if it does not exist or if u is null.
+     * @return The edge between the specified nodes, or null
+     *          if it does not exist or if u is null.
      */
     @Override
     public Edge<W> getEdge(Node<V> u, Node<V> v) {
@@ -85,10 +91,12 @@ public class AdjacencyListsGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
-     * Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.
+     * Retrieves a list of outgoing edges from the specified node,
+     *              along with the corresponding target nodes.
      *
      * @param node The node for which outgoing edges are to be retrieved.
-     * @return A list of pairs containing the target node and the outgoing edge from the specified node.
+     * @return A list of pairs containing the target node
+     *          and the outgoing edge from the specified node.
      */
     public List<Pair<Node<V>, Edge<W>>> getOutgoingEdges(Node<V> node) {
 
@@ -100,7 +108,8 @@ public class AdjacencyListsGraph<V, W extends Number> implements Graph<V, W> {
      *
      * @param u The source node.
      * @param v The target node.
-     * @return True if the edge was successfully removed, false if the edge does not exist or if u is null.
+     * @return True if the edge was successfully removed,
+     *          false if the edge does not exist or if u is null.
      */
     @Override
     public boolean removeEdge(Node<V> u, Node<V> v) {
@@ -179,7 +188,8 @@ public class AdjacencyListsGraph<V, W extends Number> implements Graph<V, W> {
      * Removes the specified vertex from the graph, along with all incident edges.
      *
      * @param node The node to be removed from the graph.
-     * @return True if the vertex was successfully removed, false if the vertex does not exist or if node is null.
+     * @return True if the vertex was successfully removed,
+     *          false if the vertex does not exist or if node is null.
      */
     @Override
     public boolean removeVertex(Node<V> node) {

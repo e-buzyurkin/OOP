@@ -1,7 +1,8 @@
 package ru.nsu.buzyurkin;
 
 /**
- * This class represents a simple pair of two values, typically used to store a left and a right value.
+ * This class represents a simple pair of two values,
+ *  typically used to store a left and a right value.
  *
  * @param <L> The type of the left value.
  * @param <R> The type of the right value.

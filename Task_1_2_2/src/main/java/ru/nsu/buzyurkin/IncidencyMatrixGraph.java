@@ -1,28 +1,48 @@
 package ru.nsu.buzyurkin;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This class represents an implementation of a graph using an incidence matrix.
  *
  * @param <V> The type of values stored in the graph's nodes.
- * @param <W> The type of weights associated with the graph's edges (must be a subclass of Number).
+ * @param <W> The type of weights associated with the graph's edges
+ *              (must be a subclass of Number).
  */
 public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     /**
      * A map representing the incidence matrix for the graph.
-     * The keys are nodes, and the values are maps that store edges and their corresponding directions.
+     * The keys are nodes, and the values are maps
+     *          that store edges and their corresponding directions.
      */
     private final Map<Node<V>, Map<Edge<W>, EdgeDirection>> incidencyMatrix;
 
     /**
-     * An enumeration to represent edge directions in the incidence matrix.
-     * INGOING represents an incoming edge to a node, OUTGOING represents an outgoing edge, and NO_EDGE represents no edge.
+     * Retrieves the edge between two nodes, if it exists.
+     *
+     * @param u The source node.
+     * @param v The target node.
+     * @return The edge between the specified nodes,
+     * or null if it does not exist or if u or v is null.
      */
-    private enum EdgeDirection {
-        INGOING,
-        NO_EDGE,
-        OUTGOING
+    @Override
+    public Edge<W> getEdge(Node<V> u, Node<V> v) {
+
+        if (incidencyMatrix.get(u) == null) {
+            return null;
+        }
+
+        for (Edge<W> edge : incidencyMatrix.get(u).keySet()) {
+            if (incidencyMatrix.get(u).get(edge) == EdgeDirection.OUTGOING
+                    && incidencyMatrix.get(v).get(edge) == EdgeDirection.INGOING) {
+                return edge;
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -59,55 +79,12 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
-     * Retrieves the edge between two nodes, if it exists.
-     *
-     * @param u The source node.
-     * @param v The target node.
-     * @return The edge between the specified nodes, or null if it does not exist or if u or v is null.
-     */
-    @Override
-    public Edge<W> getEdge(Node<V> u, Node<V> v) {
-
-        if (incidencyMatrix.get(u) == null) {
-            return null;
-        }
-
-        for (Edge<W> edge : incidencyMatrix.get(u).keySet()) {
-            if (incidencyMatrix.get(u).get(edge) == EdgeDirection.OUTGOING
-             && incidencyMatrix.get(v).get(edge) == EdgeDirection.INGOING)
-            {
-                return edge;
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Retrieves a list of all edges in the graph.
-     *
-     * @return A list of all edges in the graph.
-     */
-    @Override
-    public List<Edge<W>> getEdges() {
-        List<Edge<W>> edges = new ArrayList<>();
-
-        for (Node<V> node: incidencyMatrix.keySet()) {
-            for (Edge<W> edge: incidencyMatrix.get(node).keySet()) {
-                if (incidencyMatrix.get(node).get(edge) == EdgeDirection.OUTGOING) {
-                    edges.add(edge);
-                }
-            }
-        }
-
-        return edges;
-    }
-
-    /**
-     * Retrieves a list of outgoing edges from the specified node, along with the corresponding target nodes.
+     * Retrieves a list of outgoing edges from the specified node,
+     *      along with the corresponding target nodes.
      *
      * @param node The node for which outgoing edges are to be retrieved.
-     * @return A list of pairs containing the target node and the outgoing edge from the specified node,
+     * @return A list of pairs containing the target node
+     *          and the outgoing edge from the specified node,
      *         or null if the node is not found in the graph.
      */
     @Override
@@ -136,11 +113,32 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
+     * Retrieves a list of all edges in the graph.
+     *
+     * @return A list of all edges in the graph.
+     */
+    @Override
+    public List<Edge<W>> getEdges() {
+        List<Edge<W>> edges = new ArrayList<>();
+
+        for (Node<V> node : incidencyMatrix.keySet()) {
+            for (Edge<W> edge : incidencyMatrix.get(node).keySet()) {
+                if (incidencyMatrix.get(node).get(edge) == EdgeDirection.OUTGOING) {
+                    edges.add(edge);
+                }
+            }
+        }
+
+        return edges;
+    }
+
+    /**
      * Removes the edge between two nodes, if it exists.
      *
      * @param u The source node.
      * @param v The target node.
-     * @return True if the edge was successfully removed, false if the edge does not exist or if u or v is null.
+     * @return True if the edge was successfully removed,
+     *          false if the edge does not exist or if u or v is null.
      */
     @Override
     public boolean removeEdge(Node<V> u, Node<V> v) {
@@ -156,6 +154,28 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
 
         incidencyMatrix.get(u).remove(edge);
         incidencyMatrix.get(v).remove(edge);
+
+        return true;
+    }
+
+    /**
+     * Removes the specified vertex from the graph, along with all incident edges.
+     *
+     * @param node The node to be removed from the graph.
+     * @return True if the vertex was successfully removed,
+     * false if the vertex does not exist or if node is null.
+     */
+    @Override
+    public boolean removeVertex(Node<V> node) {
+        if (node == null) {
+            return false;
+        }
+
+        if (incidencyMatrix.get(node) == null) {
+            return false;
+        }
+
+        incidencyMatrix.remove(node);
 
         return true;
     }
@@ -219,24 +239,15 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
-     * Removes the specified vertex from the graph, along with all incident edges.
-     *
-     * @param node The node to be removed from the graph.
-     * @return True if the vertex was successfully removed, false if the vertex does not exist or if node is null.
+     * An enumeration to represent edge directions in the incidence matrix.
+     * INGOING represents an incoming edge to a node,
+     * OUTGOING represents an outgoing edge,
+     * and NO_EDGE represents no edge.
      */
-    @Override
-    public boolean removeVertex(Node<V> node) {
-        if (node == null) {
-            return false;
-        }
-
-        if (incidencyMatrix.get(node) == null) {
-            return false;
-        }
-
-        incidencyMatrix.remove(node);
-
-        return true;
+    private enum EdgeDirection {
+        INGOING,
+        NO_EDGE,
+        OUTGOING
     }
 
     /**

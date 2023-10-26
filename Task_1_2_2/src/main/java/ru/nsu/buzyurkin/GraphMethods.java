@@ -1,20 +1,27 @@
 package ru.nsu.buzyurkin;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
- * This class provides utility methods for working with graphs, including Dijkstra's algorithm for finding the shortest paths.
+ * This class provides utility methods for working with graphs,
+ *      including Dijkstra's algorithm for finding the shortest paths.
  */
 public class GraphMethods {
 
     /**
-     * Performs Dijkstra's algorithm to find the shortest paths from a source node to all other nodes in the graph.
+     * Performs Dijkstra's algorithm to find the shortest paths
+     *          from a source node to all other nodes in the graph.
      *
      * @param <V> The type of values stored in the graph's nodes.
-     * @param <W> The type of weights associated with the graph's edges (must be a subclass of Number).
+     * @param <W> The type of weights associated with the graph's edges
+     *              (must be a subclass of Number).
      * @param graph The graph on which Dijkstra's algorithm will be applied.
      * @param source The source node from which the shortest paths are calculated.
-     * @return A map that associates each node in the graph with the shortest distance from the source node,
+     * @return A map that associates each node in the graph
+     *         with the shortest distance from the source node,
      *         or Integer.MAX_VALUE for nodes that are not reachable from the source.
      */
     static <V, W extends Number> Map<Node<V>, W> dijkstra(Graph<V, W> graph, Node<V> source) {
