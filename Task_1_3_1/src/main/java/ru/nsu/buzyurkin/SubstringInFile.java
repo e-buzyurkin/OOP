@@ -1,21 +1,26 @@
 package ru.nsu.buzyurkin;
 
-import java.io.*;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * The SubstringInFile class is used to find all occurrences of a given substring within a text file.
- * It uses the Z-function algorithm to efficiently locate the positions of the substring within the file's content.
+ * The SubstringInFile class is used to find all occurrences
+ *          of a given substring within a text file.
+ * It uses the Z-function algorithm to efficiently locate
+ *          the positions of the substring within the file's content.
  */
 
 public class SubstringInFile {
-    private BufferedReader streamReader;
+    private final BufferedReader streamReader;
 
     /**
-     * Constructs a SubstringInFile object to read a specified file and initialize the streamReader.
+     * Constructs a SubstringInFile object to read a specified file
+     *          and initialize the streamReader.
      *
      * @param filename The name of the file to be processed.
      * @throws IOException If an I/O error occurs while opening or reading the file.
@@ -72,7 +77,8 @@ public class SubstringInFile {
     }
 
     /**
-     * Computes the Z-function for a given string and a substring to efficiently find all occurrences of the substring in the string.
+     * Computes the Z-function for a given string and a substring
+     *          to efficiently find all occurrences of the substring in the string.
      *
      * @param str The source string in which to search for the substring.
      * @param substr The substring to search for in the source string.

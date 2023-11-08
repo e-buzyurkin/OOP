@@ -17,7 +17,8 @@ public class SubstringInFileTests {
 
         List<Integer> indexes = string.findSubstring("бра");
 
-        assertEquals(indexes, List.of(0, 3, 6, 9, 13, 20, 28, 32, 39, 47, 51, 58, 66, 70, 77, 85));
+        assertEquals(indexes,
+                List.of(0, 3, 6, 9, 13, 20, 28, 32, 39, 47, 51, 58, 66, 70, 77, 85));
     }
 
     @Test
