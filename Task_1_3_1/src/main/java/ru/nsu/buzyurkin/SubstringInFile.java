@@ -52,7 +52,7 @@ public class SubstringInFile {
         char[] tempBuffer = new char[substring.length()];
 
         while ((bytesRead = streamReader.read(tempBuffer)) != -1) {
-            System.arraycopy(currentBuffer, substring.length() ,
+            System.arraycopy(currentBuffer, substring.length(),
                              currentBuffer, 0,
                       substring.length());
 
@@ -89,9 +89,9 @@ public class SubstringInFile {
         List<Integer> startIndexes = new ArrayList<>();
 
         for (int i = 0; i < str.length(); i++) {
-            while (i + zf[i] < str.length() &&
-                    zf[i] < substr.length() &&
-                    substr.charAt(zf[i]) == str.charAt(i + zf[i])) {
+            while (i + zf[i] < str.length()
+                   && zf[i] < substr.length()
+                   && substr.charAt(zf[i]) == str.charAt(i + zf[i])) {
                 zf[i]++;
             }
             if (zf[i] == substr.length()) {
