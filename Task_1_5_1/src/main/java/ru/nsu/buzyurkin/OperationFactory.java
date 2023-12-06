@@ -1,11 +1,10 @@
 package ru.nsu.buzyurkin;
 
-import ru.nsu.buzyurkin.Operations.*;
-
-import javax.swing.text.html.Option;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+
+import ru.nsu.buzyurkin.Operations.*;
 
 /**
  * The {@code OperationFactory} class provides a mechanism for creating instances of mathematical

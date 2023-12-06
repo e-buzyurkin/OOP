@@ -6,7 +6,8 @@ import ru.nsu.buzyurkin.CustomExceptions.IllegalExpressionException;
 import java.util.*;
 
 /**
- * The {@code ExpressionEvaluator} class evaluates mathematical expressions written in a postfix notation.
+ * The {@code ExpressionEvaluator} class evaluates mathematical
+ * expressions written in a postfix notation.
  */
 public class ExpressionEvaluator {
     private static OperationFactory operationFactory = new OperationFactory();
@@ -17,8 +18,10 @@ public class ExpressionEvaluator {
      *
      * @param expression The mathematical expression to be evaluated.
      * @return The result of the evaluation as a string.
-     * @throws IllegalExpressionException    If the expression is not a valid mathematical expression.
-     * @throws IllegalArgumentQuantityException If the number of arguments for an operation is invalid.
+     * @throws IllegalExpressionException    If the expression is not a valid
+     *                                                mathematical expression.
+     * @throws IllegalArgumentQuantityException If the number of arguments for
+     *                                                  an operation is invalid.
      */
     public static String evaluate(String expression)
             throws IllegalExpressionException, IllegalArgumentQuantityException {
@@ -69,11 +72,12 @@ public class ExpressionEvaluator {
     }
 
     /**
-     * Determines the type of a token in the expression.
+     * Determines the type of token in the expression.
      *
      * @param token The token to be classified.
      * @return The type of the token (NUMBER, OPERATION, or CONSTANT).
-     * @throws IllegalExpressionException If the token is not a valid part of a mathematical expression.
+     * @throws IllegalExpressionException If the token is not a valid part of
+     *                                      a mathematical expression.
      */
     private static TokenType getTokenType(String token) throws IllegalExpressionException {
         Optional<Operation> operation = operationFactory.getOperation(token);

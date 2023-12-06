@@ -1,8 +1,7 @@
 package ru.nsu.buzyurkin.Operations;
 
-import ru.nsu.buzyurkin.Operation;
-
 import java.util.List;
+import ru.nsu.buzyurkin.Operation;
 
 /**
  * Raises first number to the second number's power.
