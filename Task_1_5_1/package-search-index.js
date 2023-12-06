@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ru.nsu.buzyurkin"},{"l":"ru.nsu.buzyurkin.customExceptions"},{"l":"ru.nsu.buzyurkin.operations"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ru.nsu.buzyurkin"},{"l":"ru.nsu.buzyurkin.customexceptions"},{"l":"ru.nsu.buzyurkin.operations"}]
