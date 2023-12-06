@@ -1,13 +1,14 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;
 
 /**
- * Returns cosine of given value.
+ * Multiplies two numbers.
  */
-public class Cos implements Operation {
-    private int argumentsCount = 1;
+public class Multiplication implements Operation {
+    private int argumentsCount = 2;
+
     @Override
     public int getArgumentCount() {
         return argumentsCount;
@@ -20,7 +21,8 @@ public class Cos implements Operation {
         }
 
         double x = Double.parseDouble(arguments.get(0));
+        double y = Double.parseDouble(arguments.get(1));
 
-        return String.valueOf(Math.cos(x));
+        return String.valueOf(x * y);
     }
 }

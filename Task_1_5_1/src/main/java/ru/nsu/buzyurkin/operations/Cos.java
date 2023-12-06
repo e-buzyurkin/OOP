@@ -1,14 +1,13 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;
 
 /**
- * Returns a square root of given value.
+ * Returns cosine of given value.
  */
-public class Sqrt implements Operation {
+public class Cos implements Operation {
     private int argumentsCount = 1;
-
     @Override
     public int getArgumentCount() {
         return argumentsCount;
@@ -22,6 +21,6 @@ public class Sqrt implements Operation {
 
         double x = Double.parseDouble(arguments.get(0));
 
-        return String.valueOf(Math.sqrt(x));
+        return String.valueOf(Math.cos(x));
     }
 }

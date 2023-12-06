@@ -1,4 +1,4 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;

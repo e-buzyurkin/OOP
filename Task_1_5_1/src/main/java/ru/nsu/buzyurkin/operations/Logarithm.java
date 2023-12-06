@@ -1,13 +1,13 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;
 
 /**
- * Returns a subtraction of two numbers.
+ * Returns a natural logarithm of given value.
  */
-public class Subtraction implements Operation {
-    private int argumentsCount = 2;
+public class Logarithm implements Operation {
+    private int argumentsCount = 1;
 
     @Override
     public int getArgumentCount() {
@@ -21,8 +21,7 @@ public class Subtraction implements Operation {
         }
 
         double x = Double.parseDouble(arguments.get(0));
-        double y = Double.parseDouble(arguments.get(1));
 
-        return String.valueOf(x - y);
+        return String.valueOf(Math.log(x));
     }
 }

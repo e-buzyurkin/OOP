@@ -2,8 +2,8 @@ package ru.nsu.buzyurkin;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.nsu.buzyurkin.CustomExceptions.IllegalArgumentQuantityException;
-import ru.nsu.buzyurkin.CustomExceptions.IllegalExpressionException;
+import ru.nsu.buzyurkin.customExceptions.IllegalArgumentQuantityException;
+import ru.nsu.buzyurkin.customExceptions.IllegalExpressionException;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class CalculatorTests {

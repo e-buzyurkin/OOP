@@ -3,8 +3,7 @@ package ru.nsu.buzyurkin;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-
-import ru.nsu.buzyurkin.Operations.*;
+import ru.nsu.buzyurkin.operations.*;
 
 /**
  * The {@code OperationFactory} class provides a mechanism for creating instances of mathematical

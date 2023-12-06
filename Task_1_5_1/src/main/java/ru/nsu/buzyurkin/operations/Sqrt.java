@@ -1,12 +1,12 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;
 
 /**
- * Return sine of given value.
+ * Returns a square root of given value.
  */
-public class Sin implements Operation {
+public class Sqrt implements Operation {
     private int argumentsCount = 1;
 
     @Override
@@ -22,6 +22,6 @@ public class Sin implements Operation {
 
         double x = Double.parseDouble(arguments.get(0));
 
-        return String.valueOf(Math.sin(x));
+        return String.valueOf(Math.sqrt(x));
     }
 }

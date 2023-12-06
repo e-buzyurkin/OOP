@@ -1,12 +1,12 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;
 
 /**
- * Adds two numbers together.
+ * Returns a subtraction of two numbers.
  */
-public class Addition implements Operation {
+public class Subtraction implements Operation {
     private int argumentsCount = 2;
 
     @Override
@@ -23,6 +23,6 @@ public class Addition implements Operation {
         double x = Double.parseDouble(arguments.get(0));
         double y = Double.parseDouble(arguments.get(1));
 
-        return String.valueOf(x + y);
+        return String.valueOf(x - y);
     }
 }

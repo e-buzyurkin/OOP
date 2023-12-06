@@ -1,13 +1,13 @@
-package ru.nsu.buzyurkin.Operations;
+package ru.nsu.buzyurkin.operations;
 
 import java.util.List;
 import ru.nsu.buzyurkin.Operation;
 
 /**
- * Returns a natural logarithm of given value.
+ * Adds two numbers together.
  */
-public class Logarithm implements Operation {
-    private int argumentsCount = 1;
+public class Addition implements Operation {
+    private int argumentsCount = 2;
 
     @Override
     public int getArgumentCount() {
@@ -21,7 +21,8 @@ public class Logarithm implements Operation {
         }
 
         double x = Double.parseDouble(arguments.get(0));
+        double y = Double.parseDouble(arguments.get(1));
 
-        return String.valueOf(Math.log(x));
+        return String.valueOf(x + y);
     }
 }

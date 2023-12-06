@@ -1,7 +1,7 @@
 package ru.nsu.buzyurkin;
 
-import ru.nsu.buzyurkin.CustomExceptions.IllegalArgumentQuantityException;
-import ru.nsu.buzyurkin.CustomExceptions.IllegalExpressionException;
+import ru.nsu.buzyurkin.customExceptions.IllegalArgumentQuantityException;
+import ru.nsu.buzyurkin.customExceptions.IllegalExpressionException;
 
 public class Main {
     /**

@@ -1,4 +1,4 @@
-package ru.nsu.buzyurkin.CustomExceptions;
+package ru.nsu.buzyurkin.customExceptions;
 
 public class IllegalExpressionException extends Exception {
 }
