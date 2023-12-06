@@ -2,7 +2,6 @@ package ru.nsu.buzyurkin;
 
 import ru.nsu.buzyurkin.customExceptions.IllegalArgumentQuantityException;
 import ru.nsu.buzyurkin.customExceptions.IllegalExpressionException;
-
 import java.util.*;
 
 /**
@@ -53,6 +52,8 @@ public class ExpressionEvaluator {
                     break;
                 case CONSTANT:
                     stack.push(constantsFactory.getConstant(token).get());
+                    break;
+                default:
                     break;
             }
         }

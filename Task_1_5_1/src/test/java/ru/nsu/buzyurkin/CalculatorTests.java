@@ -6,6 +6,10 @@ import ru.nsu.buzyurkin.customExceptions.IllegalArgumentQuantityException;
 import ru.nsu.buzyurkin.customExceptions.IllegalExpressionException;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Test class for expression evaluator.
+ */
 public class CalculatorTests {
     @Test
     void test_basic() throws IllegalExpressionException, IllegalArgumentQuantityException {
