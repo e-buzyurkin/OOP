@@ -30,14 +30,13 @@ public class ConstantsFactory {
      * @param symbol The symbolic representation of the constant.
      * @return An optional containing the string representation
      *          of the constant, or an empty optional
-     * if the constant is not found.
+     *              if the constant is not found.
      */
     public Optional<String> getConstant(String symbol) {
         Double constant = constantsSet.get(symbol);
         if (constant != null) {
             return Optional.of(constant.toString());
-        }
-        else {
+        } else {
             return Optional.empty();
         }
     }

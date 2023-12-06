@@ -1,4 +1,4 @@
-package ru.nsu.buzyurkin.customExceptions;
+package ru.nsu.buzyurkin.customexceptions;
 
 /**
  * The {@code IllegalArgumentQuantityException} class extends

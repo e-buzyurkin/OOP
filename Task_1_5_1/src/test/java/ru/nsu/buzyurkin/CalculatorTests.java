@@ -2,8 +2,8 @@ package ru.nsu.buzyurkin;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.nsu.buzyurkin.customExceptions.IllegalArgumentQuantityException;
-import ru.nsu.buzyurkin.customExceptions.IllegalExpressionException;
+import ru.nsu.buzyurkin.customexceptions.IllegalArgumentQuantityException;
+import ru.nsu.buzyurkin.customexceptions.IllegalExpressionException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

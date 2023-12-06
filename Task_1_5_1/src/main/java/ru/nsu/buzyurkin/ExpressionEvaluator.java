@@ -1,7 +1,7 @@
 package ru.nsu.buzyurkin;
 
-import ru.nsu.buzyurkin.customExceptions.IllegalArgumentQuantityException;
-import ru.nsu.buzyurkin.customExceptions.IllegalExpressionException;
+import ru.nsu.buzyurkin.customexceptions.IllegalArgumentQuantityException;
+import ru.nsu.buzyurkin.customexceptions.IllegalExpressionException;
 import java.util.*;
 
 /**

@@ -8,6 +8,7 @@ import ru.nsu.buzyurkin.Operation;
  */
 public class Cos implements Operation {
     private int argumentsCount = 1;
+
     @Override
     public int getArgumentCount() {
         return argumentsCount;
