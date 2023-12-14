@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -204,6 +204,15 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>java.util.Map&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;,&#8203;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllEdgesMap()">getAllEdgesMap</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Retrieves a mapping of all edges in the graph, where the keys are pairs of nodes
+ representing the source and target nodes of each edge,
+          and the values are the corresponding edges.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEdge(ru.nsu.buzyurkin.Node,ru.nsu.buzyurkin.Node)">getEdge</a></span>&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;u,
        <a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;v)</code></th>
@@ -211,21 +220,21 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <div class="block">Retrieves the edge between two nodes, if it exists.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEdges()">getEdges</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a list of all edges in the graph.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEdgesCount()">getEdgesCount</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the count of edges in the graph.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOutgoingEdges(ru.nsu.buzyurkin.Node)">getOutgoingEdges</a></span>&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;node)</code></th>
 <td class="colLast">
@@ -233,28 +242,28 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
               along with the corresponding target nodes.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertex(V)">getVertex</a></span>&#8203;(<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Retrieves a node with the specified value from the graph, if it exists.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertexCount()">getVertexCount</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves the count of vertices in the graph.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVertices()">getVertices</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieves a list of all vertices in the graph.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeEdge(ru.nsu.buzyurkin.Node,ru.nsu.buzyurkin.Node)">removeEdge</a></span>&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;u,
           <a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;v)</code></th>
@@ -262,7 +271,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <div class="block">Removes the edge between two nodes, if it exists.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeVertex(ru.nsu.buzyurkin.Node)">removeVertex</a></span>&#8203;(<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&nbsp;node)</code></th>
 <td class="colLast">
@@ -378,6 +387,25 @@ implements <a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&
 <dd><code><a href="Graph.html#getEdges()">getEdges</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>,&#8203;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A list of all edges in the graph.</dd>
+</dl>
+</li>
+</ul>
+<a id="getAllEdgesMap()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllEdgesMap</h4>
+<pre class="methodSignature">public&nbsp;java.util.Map&lt;<a href="Pair.html" title="class in ru.nsu.buzyurkin">Pair</a>&lt;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;,&#8203;<a href="Node.html" title="class in ru.nsu.buzyurkin">Node</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>&gt;&gt;,&#8203;<a href="Edge.html" title="class in ru.nsu.buzyurkin">Edge</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a>&gt;&gt;&nbsp;getAllEdgesMap()</pre>
+<div class="block">Retrieves a mapping of all edges in the graph, where the keys are pairs of nodes
+ representing the source and target nodes of each edge,
+          and the values are the corresponding edges.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Graph.html#getAllEdgesMap()">getAllEdgesMap</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.buzyurkin">Graph</a>&lt;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">V</a>,&#8203;<a href="AdjacencyListsGraph.html" title="type parameter in AdjacencyListsGraph">W</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A map containing pairs of nodes as keys and their corresponding edges as values,
+         representing all edges in the graph.</dd>
 </dl>
 </li>
 </ul>
