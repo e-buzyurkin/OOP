@@ -208,6 +208,47 @@ public class GraphTests {
         assertEquals(distances.get(node5), (int) inf);
     }
 
+    /**
+     * Tests BellmanFord's algorithm on the adjacency lists representation of the graph.
+     */
+    @Test
+    void testBellmanFordAdjLists() {
+        var node1 = adjListsGraph.getVertex(1);
+        Map<Node<Integer>, Integer> distances = GraphMethods.bellmanford(adjListsGraph, node1);
+
+        assertEquals(distances.get(node1), 0);
+        var node5 = adjListsGraph.getVertex(5);
+        var inf = Double.POSITIVE_INFINITY;
+        assertEquals(distances.get(node5), (int) inf);
+    }
+
+    /**
+     * Tests BellmanFord's algorithm on the adjacency matrix representation of the graph.
+     */
+    @Test
+    void testBellmanFordAdjMatrix() {
+        var node1 = adjMatrixGraph.getVertex(1);
+        Map<Node<Integer>, Integer> distances = GraphMethods.bellmanford(adjMatrixGraph, node1);
+
+        assertEquals(distances.get(node1), 0);
+        var node5 = adjMatrixGraph.getVertex(5);
+        var inf = Double.POSITIVE_INFINITY;
+        assertEquals(distances.get(node5), (int) inf);
+    }
+
+    /**
+     * Tests BellmanFord's algorithm on the incidency matrix representation of the graph.
+     */
+    @Test
+    void testBellmanFordIncMatrix() {
+        var node1 = incMatrixGraph.getVertex(1);
+        Map<Node<Integer>, Integer> distances = GraphMethods.bellmanford(incMatrixGraph, node1);
+
+        assertEquals(distances.get(node1), 0);
+        var node5 = incMatrixGraph.getVertex(5);
+        var inf = Double.POSITIVE_INFINITY;
+        assertEquals(distances.get(node5), (int) inf);
+    }
 
     /**
      * Checks if two lists are equal in terms of their elements.

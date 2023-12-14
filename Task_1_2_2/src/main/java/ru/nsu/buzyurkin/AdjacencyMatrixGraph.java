@@ -90,6 +90,30 @@ public class AdjacencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
+     * Retrieves a mapping of all edges in the graph, where the keys are pairs of nodes
+     * representing the source and target nodes of each edge,
+     *          and the values are the corresponding edges.
+     *
+     * @return A map containing pairs of nodes as keys and their corresponding edges as values,
+     *         representing all edges in the graph.
+     */
+    public Map<Pair<Node<V>, Node<V>>, Edge<W>> getAllEdgesMap() {
+        Map<Pair<Node<V>, Node<V>>, Edge<W>> edges = new HashMap<>();
+
+        for (Node<V> i : adjacencyMatrix.keySet()) {
+            for (Node<V> j : adjacencyMatrix.get(i).keySet()) {
+                if (adjacencyMatrix.get(i).get(j) != null) {
+                    Pair<Node<V>, Node<V>> nodePair = new Pair<>(i, j);
+
+                    edges.put(nodePair, adjacencyMatrix.get(i).get(j));
+                }
+            }
+        }
+
+        return edges;
+    }
+
+    /**
      * Retrieves a list of outgoing edges from the specified node,
      *          along with the corresponding target nodes.
      *
