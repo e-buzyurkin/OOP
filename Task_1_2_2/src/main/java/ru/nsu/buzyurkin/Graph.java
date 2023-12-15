@@ -1,6 +1,7 @@
 package ru.nsu.buzyurkin;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * This interface represents a generic graph structure,
@@ -39,6 +40,16 @@ public interface Graph<V, W extends Number> {
     List<Edge<W>> getEdges();
 
     /**
+     * Retrieves a mapping of all edges in the graph, where the keys are pairs of nodes
+     * representing the source and target nodes of each edge,
+     *          and the values are the corresponding edges.
+     *
+     * @return A map containing pairs of nodes as keys and their corresponding edges as values,
+     *         representing all edges in the graph.
+     */
+    Map<Pair<Node<V>, Node<V>>, Edge<W>> getAllEdgesMap();
+
+    /**
      * Retrieves a list of outgoing edges from the specified node,
      *                          along with the corresponding target nodes.
      *
@@ -46,6 +57,7 @@ public interface Graph<V, W extends Number> {
      * @return A list of pairs containing the target node
      *              and the outgoing edge from the specified node.
      */
+
     List<Pair<Node<V>, Edge<W>>> getOutgoingEdges(Node<V> node);
 
     /**

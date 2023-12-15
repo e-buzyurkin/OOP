@@ -91,6 +91,29 @@ public class AdjacencyListsGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
+     * Retrieves a mapping of all edges in the graph, where the keys are pairs of nodes
+     * representing the source and target nodes of each edge,
+     *          and the values are the corresponding edges.
+     *
+     * @return A map containing pairs of nodes as keys and their corresponding edges as values,
+     *         representing all edges in the graph.
+     */
+    @Override
+    public Map<Pair<Node<V>, Node<V>>, Edge<W>> getAllEdgesMap() {
+        Map<Pair<Node<V>, Node<V>>, Edge<W>> edges = new HashMap<>();
+
+        for (Node<V> node : adjacencyLists.keySet()) {
+            for (Pair<Node<V>, Edge<W>> pair : adjacencyLists.get(node)) {
+                Pair<Node<V>, Node<V>> nodePair = new Pair<>(node, pair.getLeft());
+
+                edges.put(nodePair, pair.getRight());
+            }
+        }
+
+        return edges;
+    }
+
+    /**
      * Retrieves a list of outgoing edges from the specified node,
      *              along with the corresponding target nodes.
      *

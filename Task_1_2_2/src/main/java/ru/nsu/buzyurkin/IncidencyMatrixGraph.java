@@ -133,6 +133,38 @@ public class IncidencyMatrixGraph<V, W extends Number> implements Graph<V, W> {
     }
 
     /**
+     * Retrieves a mapping of all edges in the graph, where the keys are pairs of nodes
+     * representing the source and target nodes of each edge,
+     *          and the values are the corresponding edges.
+     *
+     * @return A map containing pairs of nodes as keys and their corresponding edges as values,
+     *         representing all edges in the graph.
+     */
+    public Map<Pair<Node<V>, Node<V>>, Edge<W>> getAllEdgesMap() {
+        Map<Pair<Node<V>, Node<V>>, Edge<W>> edges = new HashMap<>();
+
+        for (Node<V> node : incidencyMatrix.keySet()) {
+
+            for (Edge<W> edge : incidencyMatrix.get(node).keySet()) {
+                if (incidencyMatrix.get(node).get(edge) == EdgeDirection.OUTGOING) {
+
+                    for (Node<V> vert : incidencyMatrix.keySet()) {
+                        if (incidencyMatrix.get(vert).get(edge) == EdgeDirection.INGOING) {
+                            Pair<Node<V>, Node<V>> nodePair = new Pair<>(node, vert);
+
+                            edges.put(nodePair, edge);
+                            break;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        return edges;
+    }
+
+    /**
      * Removes the edge between two nodes, if it exists.
      *
      * @param u The source node.
