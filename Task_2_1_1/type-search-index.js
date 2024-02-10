@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.buzyurkin","l":"MultiThreadedRunner"},{"p":"ru.nsu.buzyurkin","l":"ParallelStreamRunner"},{"p":"ru.nsu.buzyurkin","l":"PrimeUtil"},{"p":"ru.nsu.buzyurkin","l":"SequentialRunner"}]
