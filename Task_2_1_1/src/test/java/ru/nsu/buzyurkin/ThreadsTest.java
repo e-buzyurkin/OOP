@@ -1,6 +1,6 @@
 package ru.nsu.buzyurkin;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +9,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * ThreadsTest is a test class for evaluating the performance of different threading approaches

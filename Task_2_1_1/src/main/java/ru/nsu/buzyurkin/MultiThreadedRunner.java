@@ -36,7 +36,7 @@ public class MultiThreadedRunner {
 
             List<Integer> subList = list.subList(start, end);
 
-            Thread thread = new Thread (
+            Thread thread = new Thread(
                     () -> {
                         boolean threadResult;
                         threadResult = PrimeUtil.anyCompound(subList);
@@ -52,8 +52,7 @@ public class MultiThreadedRunner {
         for (var thread : threads) {
             try {
                 thread.join();
-            }
-            catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
