@@ -11,6 +11,9 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Represents a server that handles multiple clients concurrently.
+ */
 public class Server extends Thread {
     private ServerSocket serverSocket;
     private volatile boolean isRunning = true;
@@ -18,10 +21,21 @@ public class Server extends Thread {
 
     private final List<ClientHandler> clientList = Collections.synchronizedList(new ArrayList<>());
 
+    /**
+     * Constructs a new Server instance with the specified port.
+     *
+     * @param port The port on which the server will listen for incoming connections.
+     */
     public Server(int port) {
         this.port = port;
     }
 
+    /**
+     * Checks if there are any compound numbers in the provided list.
+     *
+     * @param list The list of integers to check for compound numbers.
+     * @return {@code true} if there are compound numbers in the list, {@code false} otherwise.
+     */
     public boolean anyCompound(List<Integer> list) {
         AtomicBoolean anyCompounds = new AtomicBoolean(false);
 
@@ -130,6 +144,11 @@ public class Server extends Thread {
         }
     }
 
+    /**
+     * Stops the server and closes the server socket.
+     *
+     * @throws IOException if an I/O error occurs when closing the server socket.
+     */
     public void stopServer() throws IOException {
         isRunning = false;
         serverSocket.close();
@@ -150,6 +169,11 @@ public class Server extends Thread {
             }
         }
 
+        /**
+         * Sends a ping message to the client to check if it's still alive.
+         *
+         * @return {@code true} if the client is alive and responds to the ping, {@code false} otherwise.
+         */
         public boolean ping() {
             boolean isFree = mutex.tryLock();
             if (isFree) {
@@ -173,12 +197,24 @@ public class Server extends Thread {
             return true;
         }
 
+        /**
+         * Closes the connection with the client.
+         *
+         * @throws IOException if an I/O error occurs when closing the connection.
+         */
         public void closeConnection() throws IOException {
             in.close();
             out.close();
             clientSocket.close();
         }
 
+        /**
+         * Checks the provided list of numbers for compound numbers.
+         *
+         * @param integerList The list of integers to check.
+         * @return {@code true} if any of the numbers is a compound number, {@code false} otherwise.
+         * @throws DeadClientException if the client is no longer responsive.
+         */
         public boolean checkNumbers(List<Integer> integerList) throws DeadClientException {
             mutex.lock();
             try {

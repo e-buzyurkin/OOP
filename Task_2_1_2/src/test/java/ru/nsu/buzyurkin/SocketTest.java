@@ -10,19 +10,39 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Tests for socket communication between the server and clients.
+ */
 public class SocketTest {
     static Server server = new Server(33333);
+
+    /**
+     * Starts the server before running the tests.
+     *
+     * @throws InterruptedException if the thread sleep is interrupted.
+     */
     @BeforeAll
     public static void startServer() throws InterruptedException {
         server.start();
         Thread.sleep(5000);
     }
 
+    /**
+     * Stops the server after running the tests.
+     *
+     * @throws IOException if an I/O error occurs when stopping the server.
+     */
     @AfterAll
     public static void stopServer() throws IOException {
         server.stopServer();
     }
 
+    /**
+     * Tests basic functionality of the server.
+     *
+     * @throws IOException if an I/O error occurs during testing.
+     * @throws InterruptedException if the thread sleep is interrupted.
+     */
     @Test
     public void testBasic() throws IOException, InterruptedException {
         Client cl1 = new Client("localhost", 33333);
@@ -34,12 +54,17 @@ public class SocketTest {
 
         assertTrue(server.anyCompound(List.of(1, 2, 3, 4, 5, 6, 7, 8)));
 
-
         cl1.stopConnection();
         cl2.stopConnection();
         Thread.sleep(5000);
     }
 
+    /**
+     * Tests with 5 clients connected to the server.
+     *
+     * @throws IOException if an I/O error occurs during testing.
+     * @throws InterruptedException if the thread sleep is interrupted.
+     */
     @Test
     public void test5Clients() throws IOException, InterruptedException {
         Client cl1 = new Client("localhost", 33333);
@@ -59,6 +84,12 @@ public class SocketTest {
                 6997967, 6998009, 6998029, 6998039, 20165149, 6998051, 6998053)));
     }
 
+    /**
+     * Tests behavior when clients are closed.
+     *
+     * @throws IOException if an I/O error occurs during testing.
+     * @throws InterruptedException if the thread sleep is interrupted.
+     */
     @Test
     public void testClientsClosed() throws IOException, InterruptedException {
         Client cl3 = new Client("localhost", 33333);
