@@ -34,12 +34,11 @@ public class Client extends Thread {
 
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new Scanner(clientSocket.getInputStream());
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        while(isRunning) {
+        while (isRunning) {
             if (in.hasNextInt()) {
                 int num = in.nextInt();
 

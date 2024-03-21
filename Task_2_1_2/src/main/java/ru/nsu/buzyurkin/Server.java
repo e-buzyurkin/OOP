@@ -1,7 +1,5 @@
 package ru.nsu.buzyurkin;
 
-import ru.nsu.buzyurkin.exceptions.DeadClientException;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -10,6 +8,7 @@ import java.net.SocketException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
+import ru.nsu.buzyurkin.exceptions.DeadClientException;
 
 /**
  * Represents a server that handles multiple clients concurrently.
@@ -107,7 +106,7 @@ public class Server extends Thread {
         }
 
         new Thread(() -> {
-            while(isRunning) {
+            while (isRunning) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -172,7 +171,8 @@ public class Server extends Thread {
         /**
          * Sends a ping message to the client to check if it's still alive.
          *
-         * @return {@code true} if the client is alive and responds to the ping, {@code false} otherwise.
+         * @return {@code true} if the client is alive and responds to the ping,
+         * {@code false} otherwise.
          */
         public boolean ping() {
             boolean isFree = mutex.tryLock();
@@ -242,8 +242,7 @@ public class Server extends Thread {
             try {
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 in = new Scanner(clientSocket.getInputStream());
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
