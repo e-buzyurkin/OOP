@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.buzyurkin","l":"Client"},{"p":"ru.nsu.buzyurkin.exceptions","l":"DeadClientException"},{"p":"ru.nsu.buzyurkin.utility","l":"PrimeUtil"},{"p":"ru.nsu.buzyurkin","l":"Server"}]
