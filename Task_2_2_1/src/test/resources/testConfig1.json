@@ -1,0 +1,8 @@
+{
+  "storageCapacity": 15,
+  "minTime": 1000,
+  "maxTime": 2000,
+  "ordersCount": 15,
+  "bakers": [1, 2, 1],
+  "couriers": [2, 3]
+}
