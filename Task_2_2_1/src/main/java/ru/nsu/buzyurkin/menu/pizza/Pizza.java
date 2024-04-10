@@ -7,5 +7,4 @@ import ru.nsu.buzyurkin.menu.MenuItem;
  */
 public record Pizza(PizzaMenu pizzaMenu,
                     PizzaSize pizzaSize,
-                    PizzaCrust pizzaCrust) implements MenuItem {
-}
+                    PizzaCrust pizzaCrust) implements MenuItem {}

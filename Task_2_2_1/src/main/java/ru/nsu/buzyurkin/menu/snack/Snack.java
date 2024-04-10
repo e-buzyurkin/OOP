@@ -5,5 +5,4 @@ import ru.nsu.buzyurkin.menu.MenuItem;
 /**
  * Represents a snack item on the menu.
  */
-public record Snack(SnackMenu snackMenu) implements MenuItem {
-}
+public record Snack(SnackMenu snackMenu) implements MenuItem {}
