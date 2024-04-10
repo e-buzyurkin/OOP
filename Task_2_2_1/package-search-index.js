@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.buzyurkin.menu"},{"l":"ru.nsu.buzyurkin.menu.drink"},{"l":"ru.nsu.buzyurkin.menu.pizza"},{"l":"ru.nsu.buzyurkin.menu.snack"},{"l":"ru.nsu.buzyurkin.pizzeria"},{"l":"ru.nsu.buzyurkin.util"}];updateSearchResults();
