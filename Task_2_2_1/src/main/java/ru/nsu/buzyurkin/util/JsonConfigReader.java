@@ -1,11 +1,10 @@
 package ru.nsu.buzyurkin.util;
 
+import com.google.gson.Gson;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import com.google.gson.Gson;
 import ru.nsu.buzyurkin.pizzeria.Baker;
 import ru.nsu.buzyurkin.pizzeria.Courier;
 import ru.nsu.buzyurkin.pizzeria.OrderTable;

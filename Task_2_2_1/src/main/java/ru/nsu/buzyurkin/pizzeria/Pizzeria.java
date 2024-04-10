@@ -1,10 +1,10 @@
 package ru.nsu.buzyurkin.pizzeria;
 
+import java.util.List;
+import java.util.logging.Logger;
 import ru.nsu.buzyurkin.util.BlockingQueue;
 import ru.nsu.buzyurkin.util.JsonConfigReader;
 
-import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Represents the main class of the pizzeria simulation.

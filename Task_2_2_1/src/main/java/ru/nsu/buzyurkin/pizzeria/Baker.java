@@ -1,11 +1,10 @@
 package ru.nsu.buzyurkin.pizzeria;
 
-import ru.nsu.buzyurkin.menu.MenuItem;
+import java.util.logging.Logger;
 import ru.nsu.buzyurkin.menu.Order;
 import ru.nsu.buzyurkin.util.BlockingQueue;
 import ru.nsu.buzyurkin.util.StoppableThread;
 
-import java.util.logging.Logger;
 
 /**
  * Represents a baker in a pizzeria, responsible for baking pizza orders.

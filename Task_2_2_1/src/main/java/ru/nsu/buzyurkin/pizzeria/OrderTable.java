@@ -1,9 +1,8 @@
 package ru.nsu.buzyurkin.pizzeria;
 
-import ru.nsu.buzyurkin.menu.Order;
-
 import java.util.HashMap;
 import java.util.Map;
+import ru.nsu.buzyurkin.menu.Order;
 
 /**
  * Represents the order table in a pizzeria, responsible for managing orders.

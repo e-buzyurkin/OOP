@@ -1,10 +1,10 @@
 package ru.nsu.buzyurkin.pizzeria;
 
-import ru.nsu.buzyurkin.util.StoppableThread;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import ru.nsu.buzyurkin.util.StoppableThread;
 
 /**
  * Represents a courier in a pizzeria, responsible for delivering pizza orders.

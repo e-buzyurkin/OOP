@@ -1,5 +1,8 @@
 package ru.nsu.buzyurkin.pizzeria;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import ru.nsu.buzyurkin.menu.MenuItem;
 import ru.nsu.buzyurkin.menu.Order;
 import ru.nsu.buzyurkin.menu.OrderMenu;
@@ -14,10 +17,6 @@ import ru.nsu.buzyurkin.menu.snack.SnackMenu;
 import ru.nsu.buzyurkin.util.BlockingQueue;
 import ru.nsu.buzyurkin.util.RandomEnum;
 import ru.nsu.buzyurkin.util.StoppableThread;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 /**
  * Represents a random order generator for the pizzeria, responsible for generating random orders.
@@ -117,27 +116,28 @@ public class RandomOrderGenerator extends StoppableThread {
     private MenuItem getRandomMenuItem() {
         OrderMenu item = RandomEnum.randomEnum(OrderMenu.class);
         switch (item) {
-            case DRINK -> {
+            case DRINK:
                 DrinkMenu drink = RandomEnum.randomEnum(DrinkMenu.class);
 
                 return new Drink(drink);
-            }
 
-            case PIZZA -> {
+
+            case PIZZA:
                 PizzaMenu pizzaName = RandomEnum.randomEnum(PizzaMenu.class);
                 PizzaSize pizzaSize = RandomEnum.randomEnum(PizzaSize.class);
                 PizzaCrust pizzaCrust = RandomEnum.randomEnum(PizzaCrust.class);
 
                 return new Pizza(pizzaName, pizzaSize, pizzaCrust);
-            }
 
-            case SNACK -> {
+
+            case SNACK:
                 SnackMenu snack = RandomEnum.randomEnum(SnackMenu.class);
 
                 return new Snack(snack);
-            }
 
-            default -> throw new IllegalArgumentException();
+
+            default:
+                throw new IllegalArgumentException();
         }
     }
 
