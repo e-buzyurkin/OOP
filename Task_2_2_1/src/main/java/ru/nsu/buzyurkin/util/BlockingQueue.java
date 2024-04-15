@@ -28,15 +28,6 @@ public class BlockingQueue<T> {
     }
 
     /**
-     * Returns the number of elements in the queue.
-     *
-     * @return the number of elements in the queue
-     */
-    public int getSize() {
-        return queue.size();
-    }
-
-    /**
      * Retrieves and removes the head of the queue,
      *      waiting if necessary until an element becomes available.
      *
@@ -74,7 +65,7 @@ public class BlockingQueue<T> {
      *
      * @return true if the queue is empty, false otherwise
      */
-    public boolean isEmpty() {
+    public synchronized boolean isEmpty() {
         return queue.isEmpty();
     }
 }
