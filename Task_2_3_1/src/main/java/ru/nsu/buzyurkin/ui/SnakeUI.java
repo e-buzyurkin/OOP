@@ -1,5 +1,7 @@
 package ru.nsu.buzyurkin.ui;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -14,8 +16,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import java.util.ArrayList;
-import java.util.List;
 import ru.nsu.buzyurkin.entity.GameField;
 import ru.nsu.buzyurkin.entity.GameModel;
 import ru.nsu.buzyurkin.state.CellState;
