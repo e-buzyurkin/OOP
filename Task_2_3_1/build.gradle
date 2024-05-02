@@ -27,12 +27,12 @@ jacocoTestReport {
 }
 
 javafx {
-    version = "17"
+    version = "19"
     modules = [ 'javafx.controls' ]
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(19)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
