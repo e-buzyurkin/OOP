@@ -30,3 +30,9 @@ javafx {
     version = "19"
     modules = [ 'javafx.controls' ]
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
+}

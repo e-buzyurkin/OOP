@@ -31,14 +31,13 @@ public class GameModel {
         CellState nextCell = snake.nextCell(dir);
 
         switch (nextCell) {
-            case SNAKE_HEAD -> {
+            case SNAKE_HEAD, WALL, SNAKE_TAIL -> {
                 state = GameState.LOSE;
             }
             case APPLE -> {
                 ateApple = true;
             }
             default -> {
-                break;
             }
         }
 

@@ -33,7 +33,8 @@ public class GameController {
 
     public void pauseGame() {
         if (!gameThread.isPaused()) {
-            paused = true;
+            paused = !paused;
+            snakeUI.togglePauseLabel();
         }
     }
 
@@ -79,5 +80,6 @@ public class GameController {
     public void resetGame() {
         snakeUI.hideLabels();
         gameModel.resetGame();
+        gameThread.resumeGame();
     }
 }

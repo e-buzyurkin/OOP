@@ -72,21 +72,21 @@ public class SnakeUI {
         root.getChildren().add(scoreLabel);
 
         victoryLabel = new Label("VICTORY");
-        victoryLabel.setFont(Font.font("Calibri", 32));
+        victoryLabel.setFont(Font.font("Calibri", 60));
         victoryLabel.setVisible(false);
         victoryLabel.setAlignment(Pos.CENTER);
         victoryLabel.setPadding(new Insets(160));
         root.getChildren().add(victoryLabel);
 
         defeatLabel = new Label("DEFEAT");
-        defeatLabel.setFont(Font.font("Calibri", 32));
+        defeatLabel.setFont(Font.font("Calibri", 60));
         defeatLabel.setVisible(false);
         defeatLabel.setAlignment(Pos.CENTER);
         defeatLabel.setPadding(new Insets(160));
         root.getChildren().add(defeatLabel);
 
         pauseLabel = new Label("PAUSE");
-        pauseLabel.setFont(Font.font("Calibri", 32));
+        pauseLabel.setFont(Font.font("Calibri", 60));
         pauseLabel.setVisible(false);
         pauseLabel.setAlignment(Pos.CENTER);
         pauseLabel.setPadding(new Insets(160));
