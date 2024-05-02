@@ -27,7 +27,7 @@ jacocoTestReport {
 }
 
 javafx {
-    version = "19"
+    version = "17"
     modules = [ 'javafx.controls' ]
 }
 
