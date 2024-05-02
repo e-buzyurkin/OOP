@@ -1,0 +1,7 @@
+module:ru.nsu.buzyurkin
+ru.nsu.buzyurkin
+ru.nsu.buzyurkin.controller
+ru.nsu.buzyurkin.entity
+ru.nsu.buzyurkin.state
+ru.nsu.buzyurkin.ui
+ru.nsu.buzyurkin.util
