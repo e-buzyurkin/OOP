@@ -36,3 +36,5 @@ java {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
+
+mainClassName = 'ru.nsu.buzyurkin.SnakeApplication'
