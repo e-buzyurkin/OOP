@@ -14,13 +14,15 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 import ru.nsu.buzyurkin.entity.GameField;
 import ru.nsu.buzyurkin.entity.GameModel;
 import ru.nsu.buzyurkin.state.CellState;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Represents the user interface for the Snake game.
+ */
 public class SnakeUI {
     private static int CELL_SIZE = 40;
 
@@ -35,6 +37,16 @@ public class SnakeUI {
 
     private final List<List<Rectangle>> cellRectangles = new ArrayList<>();
 
+    /**
+     * Constructs the SnakeUI object with the specified parameters.
+     *
+     * @param windowWidth  the width of the window
+     * @param windowHeight the height of the window
+     * @param windowTitle  the title of the window
+     * @param primaryStage the primary stage of the JavaFX application
+     * @param fieldCols    the number of columns in the game field
+     * @param fieldRows    the number of rows in the game field
+     */
     public SnakeUI(int windowWidth, int windowHeight, String windowTitle,
                    Stage primaryStage, int fieldCols, int fieldRows) {
 
@@ -101,18 +113,36 @@ public class SnakeUI {
         primaryStage.show();
     }
 
+    /**
+     * Sets the event handler for key pressed events.
+     *
+     * @param handler the event handler for key pressed events
+     */
     public void setKeyPressedHandler(EventHandler<? super KeyEvent> handler) {
         mainScene.setOnKeyPressed(handler);
     }
 
+    /**
+     * Sets the close handler for the main stage.
+     *
+     * @param handler the close handler for the main stage
+     */
     public void setCloseHandler(EventHandler<WindowEvent> handler) {
         mainStage.setOnCloseRequest(handler);
     }
 
+    /**
+     * Shows the victory label.
+     */
     public void showVictoryLabel() {
         victoryLabel.setVisible(true);
     }
 
+    /**
+     * Shows the defeat label with the specified score.
+     *
+     * @param score the score to display in the defeat label
+     */
     public void showDefeatLabel(int score) {
         String result = "DEFEAT\nScore: " + score;
 
@@ -120,15 +150,24 @@ public class SnakeUI {
         defeatLabel.setVisible(true);
     }
 
+    /**
+     * Hides all the labels.
+     */
     public void hideLabels() {
         defeatLabel.setVisible(false);
         victoryLabel.setVisible(false);
     }
 
+    /**
+     * Toggles the visibility of the pause label.
+     */
     public void togglePauseLabel() {
         pauseLabel.setVisible(!pauseLabel.isVisible());
     }
 
+    /**
+     * Shows a help message in an alert dialog.
+     */
     public void showHelp() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Help");
@@ -136,6 +175,9 @@ public class SnakeUI {
         alert.showAndWait().ifPresent(rs -> {});
     }
 
+    /**
+     * Shows an error message in an alert dialog.
+     */
     public void showError() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("ERROR");
@@ -143,6 +185,11 @@ public class SnakeUI {
         alert.showAndWait().ifPresent(rs -> {});
     }
 
+    /**
+     * Draws the current state of the game field.
+     *
+     * @param gameModel the game model containing the current state of the game
+     */
     public void draw(GameModel gameModel) {
         GameField field = gameModel.getField();
 

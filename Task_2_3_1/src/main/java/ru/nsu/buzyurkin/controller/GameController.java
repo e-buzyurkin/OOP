@@ -5,6 +5,9 @@ import ru.nsu.buzyurkin.entity.GameModel;
 import ru.nsu.buzyurkin.state.Direction;
 import ru.nsu.buzyurkin.ui.SnakeUI;
 
+/**
+ * Controls the game flow and interaction between the game model and user interface.
+ */
 public class GameController {
     private static int DELAY = 200;
 
@@ -15,6 +18,12 @@ public class GameController {
     private Direction dir = Direction.UP;
     private boolean paused = false;
 
+    /**
+     * Constructs a GameController object with the specified game model and user interface.
+     *
+     * @param gameModel the game model
+     * @param snakeUI   the user interface
+     */
     public GameController(GameModel gameModel, SnakeUI snakeUI) {
         this.gameModel = gameModel;
         this.snakeUI = snakeUI;
@@ -27,10 +36,18 @@ public class GameController {
         snakeUI.setCloseHandler(event -> gameThread.interrupt());
     }
 
+    /**
+     * Sets the direction of the snake movement.
+     *
+     * @param dir the direction
+     */
     public void setDir(Direction dir) {
         this.dir = dir;
     }
 
+    /**
+     * Pauses or resumes the game.
+     */
     public void pauseGame() {
         if (!gameThread.isPaused()) {
             paused = !paused;
@@ -38,20 +55,32 @@ public class GameController {
         }
     }
 
+    /**
+     * Shows the help message.
+     */
     public void showHelp() {
         snakeUI.showHelp();
     }
 
+    /**
+     * Handles the victory.
+     */
     public void victory() {
         snakeUI.showVictoryLabel();
         gameThread.stopGame();
     }
 
+    /**
+     * Handles the defeat.
+     */
     public void defeat() {
         snakeUI.showDefeatLabel(gameModel.getScore());
         gameThread.stopGame();
     }
 
+    /**
+     * Performs a single step of the game.
+     */
     public void step() {
         try {
             if (!paused) {
@@ -73,10 +102,16 @@ public class GameController {
         }
     }
 
+    /**
+     * Starts the game thread.
+     */
     public void startGame() {
         gameThread.start();
     }
 
+    /**
+     * Resets the game to its initial state.
+     */
     public void resetGame() {
         snakeUI.hideLabels();
         gameModel.resetGame();

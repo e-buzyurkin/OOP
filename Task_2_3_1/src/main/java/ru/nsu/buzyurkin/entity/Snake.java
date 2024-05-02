@@ -1,10 +1,10 @@
 package ru.nsu.buzyurkin.entity;
 
-import ru.nsu.buzyurkin.state.CellState;
-import ru.nsu.buzyurkin.state.Direction;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import ru.nsu.buzyurkin.state.Direction;
+import ru.nsu.buzyurkin.state.CellState;
 
 public class Snake {
     private GameField field;
