@@ -49,7 +49,8 @@ public class Snake {
     }
 
     /**
-     * Calculates the position of the new head cell after moving the snake in the specified direction.
+     * Calculates the position of the new head cell
+     *          after moving the snake in the specified direction.
      *
      * @param dir the direction to move the snake
      * @return the new head cell position

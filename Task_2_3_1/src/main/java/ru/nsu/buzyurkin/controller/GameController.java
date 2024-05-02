@@ -94,6 +94,8 @@ public class GameController {
                     case PLAYING -> {
                         snakeUI.draw(gameModel);
                     }
+                    default -> {
+                    }
                 }
             }
         } catch (Exception e) {
