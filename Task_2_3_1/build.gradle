@@ -1,0 +1,40 @@
+plugins {
+    id 'application'
+    id 'jacoco'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group = 'ru.nsu.buzyurkin'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
+javafx {
+    version = "19"
+    modules = [ 'javafx.controls' ]
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+mainClassName = 'ru.nsu.buzyurkin.SnakeApplication'
