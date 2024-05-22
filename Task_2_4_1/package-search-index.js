@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.buzyurkin"},{"l":"ru.nsu.buzyurkin.git"},{"l":"ru.nsu.buzyurkin.model"},{"l":"ru.nsu.buzyurkin.result"},{"l":"ru.nsu.buzyurkin.util"}];updateSearchResults();
