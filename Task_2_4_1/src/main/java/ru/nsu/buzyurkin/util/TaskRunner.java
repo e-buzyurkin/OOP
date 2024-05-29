@@ -1,17 +1,15 @@
 package ru.nsu.buzyurkin.util;
 
-import java.io.File;
-import java.util.*;
 
 import com.puppycrawl.tools.checkstyle.api.AuditListener;
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
-import lombok.Getter;
-
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
 import com.puppycrawl.tools.checkstyle.PropertiesExpander;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
+import java.io.File;
+import java.util.*;
 import org.gradle.tooling.BuildException;
 import org.gradle.tooling.BuildLauncher;
 import org.gradle.tooling.GradleConnector;
@@ -19,6 +17,7 @@ import org.gradle.tooling.ProjectConnection;
 import org.gradle.tooling.TestExecutionException;
 import org.gradle.tooling.events.*;
 import org.gradle.tooling.events.test.*;
+import lombok.Getter;
 import ru.nsu.buzyurkin.git.Repository;
 import ru.nsu.buzyurkin.model.Assignment;
 import ru.nsu.buzyurkin.model.Config;
@@ -29,11 +28,20 @@ import ru.nsu.buzyurkin.result.TaskResult;
 import ru.nsu.buzyurkin.result.TestResult;
 
 
+/**
+ * The TaskRunner class is responsible for evaluating student tasks.
+ */
 public class TaskRunner {
     private Map<String, Task> tasks;
     private Map<String, List<Assignment>> assignments;
     private Repository repo;
 
+    /**
+     * Constructs a TaskRunner instance with the provided configuration and repository.
+     *
+     * @param config the configuration object containing tasks and assignments.
+     * @param repo the repository object for accessing student repositories.
+     */
     public TaskRunner(Config config, Repository repo) {
         this.repo = repo;
         tasks = new HashMap<>();
@@ -46,6 +54,13 @@ public class TaskRunner {
         }
     }
 
+    /**
+     * Evaluates the tasks for a specific student.
+     *
+     * @param student the student whose tasks are being evaluated.
+     * @param repoDirectory the directory of the student's repository.
+     * @return the result of evaluating the student's tasks.
+     */
     public StudentResult evaluateStudent(Student student, File repoDirectory) {
         System.out.printf("%nEvaluating %s%n", student.getName());
         List<TaskResult> taskResults = new ArrayList<>();

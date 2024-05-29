@@ -5,19 +5,32 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
-
-import org.codehaus.groovy.control.CompilerConfiguration;
-
 import groovy.lang.Binding;
 import groovy.lang.Closure;
 import groovy.lang.GroovyObjectSupport;
 import groovy.lang.GroovyShell;
 import groovy.lang.MetaProperty;
 import groovy.util.DelegatingScript;
+import org.codehaus.groovy.control.CompilerConfiguration;
 import ru.nsu.buzyurkin.Main;
 
+
+/**
+ * The GroovyConfigurable class allows configuration of its properties from a Groovy script file.
+ */
 public class GroovyConfigurable extends GroovyObjectSupport {
 
+    /**
+     * Configures the properties of the current object from the specified Groovy script file.
+     *
+     * @param file the Groovy script file to configure from.
+     * @throws IOException if an I/O error occurs reading the file.
+     * @throws NoSuchFieldException if a field is not found during reflection.
+     * @throws InvocationTargetException if an exception occurs during method invocation.
+     * @throws InstantiationException if an error occurs during instantiation.
+     * @throws IllegalAccessException if an error occurs accessing a method or field.
+     * @throws NoSuchMethodException if a method is not found during reflection.
+     */
     public void configureFromFile(File file) throws
             IOException, NoSuchFieldException, InvocationTargetException, InstantiationException,
             IllegalAccessException, NoSuchMethodException {
@@ -78,6 +91,4 @@ public class GroovyConfigurable extends GroovyObjectSupport {
         }
         return value;
     }
-
-
 }

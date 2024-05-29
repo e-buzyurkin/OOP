@@ -1,10 +1,14 @@
 package ru.nsu.buzyurkin.model;
 
+import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.List;
 
+/**
+ * The Config class holds the configuration details including tasks, group name, students, assignments,
+ * and the directory for repositories.
+ */
 @EqualsAndHashCode(callSuper=false)
 @Data
 public class Config extends GroovyConfigurable {

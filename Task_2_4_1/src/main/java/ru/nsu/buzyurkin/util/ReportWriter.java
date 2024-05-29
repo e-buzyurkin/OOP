@@ -1,12 +1,15 @@
 package ru.nsu.buzyurkin.util;
 
+import java.util.List;
+import java.util.stream.Stream;
 import ru.nsu.buzyurkin.model.Student;
 import ru.nsu.buzyurkin.result.StudentResult;
 import ru.nsu.buzyurkin.result.TaskResult;
 
-import java.util.List;
-import java.util.stream.Stream;
 
+/**
+ * The ReportWriter class is responsible for printing the evaluation report.
+ */
 public class ReportWriter {
     private static String HEADER =
             "┌────────────────────────────────┬────────────────────────────────┬───────┬───────┬─────────┬────────────┬────────────────────┬───────┬─────────────┐%n" +
@@ -54,10 +57,18 @@ public class ReportWriter {
     private List<StudentResult> results;
     private boolean lastTaskTested = true;
 
+    /**
+     * Constructs a ReportWriter instance with the given list of student results.
+     *
+     * @param results the list of student results to be printed.
+     */
     public ReportWriter(List<StudentResult> results) {
         this.results = results;
     }
 
+    /**
+     * Prints the evaluation report.
+     */
     public void printReport() {
         System.out.printf(HEADER);
         for (StudentResult studentResult : results) {
