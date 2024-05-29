@@ -1,13 +1,13 @@
 package ru.nsu.buzyurkin.util;
 
 
+import com.puppycrawl.tools.checkstyle.Checker;
+import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
+import com.puppycrawl.tools.checkstyle.PropertiesExpander;
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.AuditListener;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
-import com.puppycrawl.tools.checkstyle.Checker;
-import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
-import com.puppycrawl.tools.checkstyle.PropertiesExpander;
 import java.io.File;
 import java.util.*;
 import lombok.Getter;
@@ -50,7 +50,8 @@ public class TaskRunner {
         }
         assignments = new LinkedHashMap<>();
         for (Assignment assignment : config.getAssignments()) {
-            assignments.computeIfAbsent(assignment.getStudentId(), k -> new ArrayList<>()).add(assignment);
+            assignments.computeIfAbsent(assignment.getStudentId(),
+                    k -> new ArrayList<>()).add(assignment);
         }
     }
 
@@ -249,8 +250,10 @@ public class TaskRunner {
 
         public void statusChanged(ProgressEvent event) {
             OperationDescriptor descriptor = event.getDescriptor();
-            if (event instanceof TestFinishEvent && descriptor instanceof JvmTestOperationDescriptor) {
-                if (((JvmTestOperationDescriptor) descriptor).getJvmTestKind() == JvmTestKind.ATOMIC) {
+            if (event instanceof TestFinishEvent
+                    && descriptor instanceof JvmTestOperationDescriptor) {
+                if (((JvmTestOperationDescriptor) descriptor).getJvmTestKind()
+                        == JvmTestKind.ATOMIC) {
                     TestOperationResult result = ((TestFinishEvent) event).getResult();
                     if (result instanceof TestSuccessResult) {
                         testsPassed++;

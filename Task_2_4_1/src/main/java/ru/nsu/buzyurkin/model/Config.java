@@ -6,10 +6,11 @@ import lombok.EqualsAndHashCode;
 
 
 /**
- * The Config class holds the configuration details including tasks, group name, students, assignments,
+ * The Config class holds the configuration details
+ * including tasks, group name, students, assignments,
  * and the directory for repositories.
  */
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 @Data
 public class Config extends GroovyConfigurable {
     private List<Task> tasks;

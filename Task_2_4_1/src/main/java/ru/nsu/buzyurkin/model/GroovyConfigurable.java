@@ -50,7 +50,8 @@ public class GroovyConfigurable extends GroovyObjectSupport {
 
         for (MetaProperty property : getMetaClass().getProperties()) {
             Object value = getProperty(property.getName());
-            if (Collection.class.isAssignableFrom(property.getType()) && value instanceof Collection) {
+            if (Collection.class.isAssignableFrom(property.getType())
+                    && value instanceof Collection) {
                 setProperty(property.getName(), configureCollection(property, value));
             }
         }

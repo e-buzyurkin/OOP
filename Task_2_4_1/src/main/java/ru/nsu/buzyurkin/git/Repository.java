@@ -1,8 +1,8 @@
 package ru.nsu.buzyurkin.git;
 
 import java.io.File;
-import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
 import ru.nsu.buzyurkin.model.Config;
 import ru.nsu.buzyurkin.model.Student;
 
