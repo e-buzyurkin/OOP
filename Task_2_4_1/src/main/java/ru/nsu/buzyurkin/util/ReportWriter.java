@@ -6,7 +6,6 @@ import ru.nsu.buzyurkin.model.Student;
 import ru.nsu.buzyurkin.result.StudentResult;
 import ru.nsu.buzyurkin.result.TaskResult;
 
-
 /**
  * The ReportWriter class is responsible for printing the evaluation report.
  */

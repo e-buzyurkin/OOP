@@ -1,23 +1,23 @@
 package ru.nsu.buzyurkin.util;
 
 
-import com.puppycrawl.tools.checkstyle.api.AuditListener;
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
+import com.puppycrawl.tools.checkstyle.api.AuditListener;
+import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
+import com.puppycrawl.tools.checkstyle.api.Configuration;
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
 import com.puppycrawl.tools.checkstyle.PropertiesExpander;
-import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
-import com.puppycrawl.tools.checkstyle.api.Configuration;
 import java.io.File;
 import java.util.*;
+import lombok.Getter;
 import org.gradle.tooling.BuildException;
 import org.gradle.tooling.BuildLauncher;
+import org.gradle.tooling.events.*;
+import org.gradle.tooling.events.test.*;
 import org.gradle.tooling.GradleConnector;
 import org.gradle.tooling.ProjectConnection;
 import org.gradle.tooling.TestExecutionException;
-import org.gradle.tooling.events.*;
-import org.gradle.tooling.events.test.*;
-import lombok.Getter;
 import ru.nsu.buzyurkin.git.Repository;
 import ru.nsu.buzyurkin.model.Assignment;
 import ru.nsu.buzyurkin.model.Config;

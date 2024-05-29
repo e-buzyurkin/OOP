@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import ru.nsu.buzyurkin.util.ReportWriter;
-import ru.nsu.buzyurkin.util.TaskRunner;
 import ru.nsu.buzyurkin.model.Config;
 import ru.nsu.buzyurkin.model.Student;
 import ru.nsu.buzyurkin.result.StudentResult;
+import ru.nsu.buzyurkin.util.ReportWriter;
+import ru.nsu.buzyurkin.util.TaskRunner;
 
 
 /**

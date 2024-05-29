@@ -1,16 +1,16 @@
 package ru.nsu.buzyurkin.model;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.ParameterizedType;
-import java.util.Collection;
 import groovy.lang.Binding;
 import groovy.lang.Closure;
 import groovy.lang.GroovyObjectSupport;
 import groovy.lang.GroovyShell;
 import groovy.lang.MetaProperty;
 import groovy.util.DelegatingScript;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.ParameterizedType;
+import java.util.Collection;
 import org.codehaus.groovy.control.CompilerConfiguration;
 import ru.nsu.buzyurkin.Main;
 

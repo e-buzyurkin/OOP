@@ -10,7 +10,7 @@ public class AutoCheckerTests {
     @Test
     void test() {
 
-        label : {
+        label: {
             System.out.println("label");
         }
     }
