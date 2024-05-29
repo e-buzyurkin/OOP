@@ -76,9 +76,17 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-buildSuccess">buildSuccess</span></code> - a flag indicating whether the build was successful before running tests.</dd>
+<dd><code><span id="param-testsPassed">testsPassed</span></code> - the number of tests that passed.</dd>
+<dd><code><span id="param-testsFailed">testsFailed</span></code> - the number of tests that failed.</dd>
+<dd><code><span id="param-testsSkipped">testsSkipped</span></code> - the number of tests that were skipped.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">TestResult</span>(boolean&nbsp;buildSuccess, int&nbsp;testsPassed, int&nbsp;testsFailed, int&nbsp;testsSkipped)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">The TestResult record holds the result of running tests.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -114,7 +122,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildSuccess()" class="member-name-link">buildSuccess</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>buildSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -129,17 +137,17 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testsFailed()" class="member-name-link">testsFailed</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>testsFailed</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testsFailed"><code>testsFailed</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testsPassed()" class="member-name-link">testsPassed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>testsPassed</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testsPassed"><code>testsPassed</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testsSkipped()" class="member-name-link">testsSkipped</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>testsSkipped</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testsSkipped"><code>testsSkipped</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -173,10 +181,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates an instance of a <code>TestResult</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>buildSuccess</code> - the value for the <code>buildSuccess</code> record component</dd>
-<dd><code>testsPassed</code> - the value for the <code>testsPassed</code> record component</dd>
-<dd><code>testsFailed</code> - the value for the <code>testsFailed</code> record component</dd>
-<dd><code>testsSkipped</code> - the value for the <code>testsSkipped</code> record component</dd>
+<dd><code>buildSuccess</code> - the value for the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component</dd>
+<dd><code>testsPassed</code> - the value for the <a href="#param-testsPassed"><code>testsPassed</code></a> record component</dd>
+<dd><code>testsFailed</code> - the value for the <a href="#param-testsFailed"><code>testsFailed</code></a> record component</dd>
+<dd><code>testsSkipped</code> - the value for the <a href="#param-testsSkipped"><code>testsSkipped</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -233,10 +241,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="buildSuccess()">
 <h3>buildSuccess</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">buildSuccess</span>()</div>
-<div class="block">Returns the value of the <code>buildSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>buildSuccess</code> record component</dd>
+<dd>the value of the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -244,10 +252,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="testsPassed()">
 <h3>testsPassed</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">testsPassed</span>()</div>
-<div class="block">Returns the value of the <code>testsPassed</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testsPassed"><code>testsPassed</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>testsPassed</code> record component</dd>
+<dd>the value of the <a href="#param-testsPassed"><code>testsPassed</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -255,10 +263,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="testsFailed()">
 <h3>testsFailed</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">testsFailed</span>()</div>
-<div class="block">Returns the value of the <code>testsFailed</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testsFailed"><code>testsFailed</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>testsFailed</code> record component</dd>
+<dd>the value of the <a href="#param-testsFailed"><code>testsFailed</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -266,10 +274,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="testsSkipped()">
 <h3>testsSkipped</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">testsSkipped</span>()</div>
-<div class="block">Returns the value of the <code>testsSkipped</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testsSkipped"><code>testsSkipped</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>testsSkipped</code> record component</dd>
+<dd>the value of the <a href="#param-testsSkipped"><code>testsSkipped</code></a> record component</dd>
 </dl>
 </section>
 </li>

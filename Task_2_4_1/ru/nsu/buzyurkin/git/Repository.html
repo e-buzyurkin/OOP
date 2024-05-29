@@ -77,6 +77,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Repository</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The Repository class handles cloning and managing student repositories using JGit.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -89,7 +90,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.buzyurkin.model.Config)" class="member-name-link">Repository</a><wbr>(<a href="../model/Config.html" title="class in ru.nsu.buzyurkin.model">Config</a>&nbsp;config)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a Repository instance with the specified configuration.</div>
+</div>
 </div>
 </section>
 </li>
@@ -106,10 +109,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkoutBranch(java.lang.String)" class="member-name-link">checkoutBranch</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;branch)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks out the specified branch in the cloned repository.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cloneRepo(ru.nsu.buzyurkin.model.Student)" class="member-name-link">cloneRepo</a><wbr>(<a href="../model/Student.html" title="class in ru.nsu.buzyurkin.model">Student</a>&nbsp;student)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Clones the repository of the specified student.</div>
+</div>
 </div>
 </div>
 </div>
@@ -131,6 +138,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(ru.nsu.buzyurkin.model.Config)">
 <h3>Repository</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Repository</span><wbr><span class="parameters">(<a href="../model/Config.html" title="class in ru.nsu.buzyurkin.model">Config</a>&nbsp;config)</span></div>
+<div class="block">Constructs a Repository instance with the specified configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>config</code> - the configuration object containing the setup details.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -145,12 +157,26 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="cloneRepo(ru.nsu.buzyurkin.model.Student)">
 <h3>cloneRepo</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a></span>&nbsp;<span class="element-name">cloneRepo</span><wbr><span class="parameters">(<a href="../model/Student.html" title="class in ru.nsu.buzyurkin.model">Student</a>&nbsp;student)</span></div>
+<div class="block">Clones the repository of the specified student.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>student</code> - the student whose repository needs to be cloned.</dd>
+<dt>Returns:</dt>
+<dd>the directory where the repository is cloned, or null if cloning fails.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="checkoutBranch(java.lang.String)">
 <h3>checkoutBranch</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkoutBranch</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;branch)</span></div>
+<div class="block">Checks out the specified branch in the cloned repository.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>branch</code> - the name of the branch to check out.</dd>
+<dt>Returns:</dt>
+<dd>true if the branch is successfully checked out, false otherwise.</dd>
+</dl>
 </section>
 </li>
 </ul>

@@ -77,6 +77,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TaskRunner</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The TaskRunner class is responsible for evaluating student tasks.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -90,7 +91,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.buzyurkin.model.Config,ru.nsu.buzyurkin.git.Repository)" class="member-name-link">TaskRunner</a><wbr>(<a href="../model/Config.html" title="class in ru.nsu.buzyurkin.model">Config</a>&nbsp;config,
  <a href="../git/Repository.html" title="class in ru.nsu.buzyurkin.git">Repository</a>&nbsp;repo)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a TaskRunner instance with the provided configuration and repository.</div>
+</div>
 </div>
 </section>
 </li>
@@ -108,7 +111,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../result/StudentResult.html" title="class in ru.nsu.buzyurkin.result">StudentResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#evaluateStudent(ru.nsu.buzyurkin.model.Student,java.io.File)" class="member-name-link">evaluateStudent</a><wbr>(<a href="../model/Student.html" title="class in ru.nsu.buzyurkin.model">Student</a>&nbsp;student,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;repoDirectory)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Evaluates the tasks for a specific student.</div>
+</div>
 </div>
 </div>
 </div>
@@ -131,6 +136,12 @@ loadScripts(document, 'script');</script>
 <h3>TaskRunner</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TaskRunner</span><wbr><span class="parameters">(<a href="../model/Config.html" title="class in ru.nsu.buzyurkin.model">Config</a>&nbsp;config,
  <a href="../git/Repository.html" title="class in ru.nsu.buzyurkin.git">Repository</a>&nbsp;repo)</span></div>
+<div class="block">Constructs a TaskRunner instance with the provided configuration and repository.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>config</code> - the configuration object containing tasks and assignments.</dd>
+<dd><code>repo</code> - the repository object for accessing student repositories.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -146,6 +157,14 @@ loadScripts(document, 'script');</script>
 <h3>evaluateStudent</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../result/StudentResult.html" title="class in ru.nsu.buzyurkin.result">StudentResult</a></span>&nbsp;<span class="element-name">evaluateStudent</span><wbr><span class="parameters">(<a href="../model/Student.html" title="class in ru.nsu.buzyurkin.model">Student</a>&nbsp;student,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link">File</a>&nbsp;repoDirectory)</span></div>
+<div class="block">Evaluates the tasks for a specific student.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>student</code> - the student whose tasks are being evaluated.</dd>
+<dd><code>repoDirectory</code> - the directory of the student's repository.</dd>
+<dt>Returns:</dt>
+<dd>the result of evaluating the student's tasks.</dd>
+</dl>
 </section>
 </li>
 </ul>

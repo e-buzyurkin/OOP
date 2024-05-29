@@ -76,9 +76,20 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-task">task</span></code> - the task that was evaluated.</dd>
+<dd><code><span id="param-found">found</span></code> - a flag indicating whether the task was found in the repository.</dd>
+<dd><code><span id="param-buildSuccess">buildSuccess</span></code> - a flag indicating whether the task built successfully.</dd>
+<dd><code><span id="param-javadocSuccess">javadocSuccess</span></code> - a flag indicating whether the Javadoc generation was successful.</dd>
+<dd><code><span id="param-checkstyleSuccess">checkstyleSuccess</span></code> - a flag indicating whether the code passed Checkstyle validation.</dd>
+<dd><code><span id="param-testResult">testResult</span></code> - the result of running tests on the task.</dd>
+<dd><code><span id="param-score">score</span></code> - the score obtained for the task.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">TaskResult</span>(<a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a>&nbsp;task, boolean&nbsp;found, boolean&nbsp;buildSuccess, boolean&nbsp;javadocSuccess, boolean&nbsp;checkstyleSuccess, <a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a>&nbsp;testResult, float&nbsp;score)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">The TaskResult record holds the result of evaluating a specific task.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -117,12 +128,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#buildSuccess()" class="member-name-link">buildSuccess</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>buildSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkstyleSuccess()" class="member-name-link">checkstyleSuccess</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>checkstyleSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-checkstyleSuccess"><code>checkstyleSuccess</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -132,7 +143,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#found()" class="member-name-link">found</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>found</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-found"><code>found</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -142,22 +153,22 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#javadocSuccess()" class="member-name-link">javadocSuccess</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>javadocSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-javadocSuccess"><code>javadocSuccess</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#score()" class="member-name-link">score</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>score</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-score"><code>score</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#task()" class="member-name-link">task</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>task</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-task"><code>task</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#testResult()" class="member-name-link">testResult</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>testResult</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testResult"><code>testResult</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -194,13 +205,13 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates an instance of a <code>TaskResult</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>task</code> - the value for the <code>task</code> record component</dd>
-<dd><code>found</code> - the value for the <code>found</code> record component</dd>
-<dd><code>buildSuccess</code> - the value for the <code>buildSuccess</code> record component</dd>
-<dd><code>javadocSuccess</code> - the value for the <code>javadocSuccess</code> record component</dd>
-<dd><code>checkstyleSuccess</code> - the value for the <code>checkstyleSuccess</code> record component</dd>
-<dd><code>testResult</code> - the value for the <code>testResult</code> record component</dd>
-<dd><code>score</code> - the value for the <code>score</code> record component</dd>
+<dd><code>task</code> - the value for the <a href="#param-task"><code>task</code></a> record component</dd>
+<dd><code>found</code> - the value for the <a href="#param-found"><code>found</code></a> record component</dd>
+<dd><code>buildSuccess</code> - the value for the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component</dd>
+<dd><code>javadocSuccess</code> - the value for the <a href="#param-javadocSuccess"><code>javadocSuccess</code></a> record component</dd>
+<dd><code>checkstyleSuccess</code> - the value for the <a href="#param-checkstyleSuccess"><code>checkstyleSuccess</code></a> record component</dd>
+<dd><code>testResult</code> - the value for the <a href="#param-testResult"><code>testResult</code></a> record component</dd>
+<dd><code>score</code> - the value for the <a href="#param-score"><code>score</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -257,10 +268,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="task()">
 <h3>task</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a></span>&nbsp;<span class="element-name">task</span>()</div>
-<div class="block">Returns the value of the <code>task</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-task"><code>task</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>task</code> record component</dd>
+<dd>the value of the <a href="#param-task"><code>task</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -268,10 +279,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="found()">
 <h3>found</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">found</span>()</div>
-<div class="block">Returns the value of the <code>found</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-found"><code>found</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>found</code> record component</dd>
+<dd>the value of the <a href="#param-found"><code>found</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -279,10 +290,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="buildSuccess()">
 <h3>buildSuccess</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">buildSuccess</span>()</div>
-<div class="block">Returns the value of the <code>buildSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>buildSuccess</code> record component</dd>
+<dd>the value of the <a href="#param-buildSuccess"><code>buildSuccess</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -290,10 +301,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="javadocSuccess()">
 <h3>javadocSuccess</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">javadocSuccess</span>()</div>
-<div class="block">Returns the value of the <code>javadocSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-javadocSuccess"><code>javadocSuccess</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>javadocSuccess</code> record component</dd>
+<dd>the value of the <a href="#param-javadocSuccess"><code>javadocSuccess</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -301,10 +312,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="checkstyleSuccess()">
 <h3>checkstyleSuccess</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkstyleSuccess</span>()</div>
-<div class="block">Returns the value of the <code>checkstyleSuccess</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-checkstyleSuccess"><code>checkstyleSuccess</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>checkstyleSuccess</code> record component</dd>
+<dd>the value of the <a href="#param-checkstyleSuccess"><code>checkstyleSuccess</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -312,10 +323,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="testResult()">
 <h3>testResult</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a></span>&nbsp;<span class="element-name">testResult</span>()</div>
-<div class="block">Returns the value of the <code>testResult</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-testResult"><code>testResult</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>testResult</code> record component</dd>
+<dd>the value of the <a href="#param-testResult"><code>testResult</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -323,10 +334,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="score()">
 <h3>score</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">score</span>()</div>
-<div class="block">Returns the value of the <code>score</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-score"><code>score</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>score</code> record component</dd>
+<dd>the value of the <a href="#param-score"><code>score</code></a> record component</dd>
 </dl>
 </section>
 </li>
