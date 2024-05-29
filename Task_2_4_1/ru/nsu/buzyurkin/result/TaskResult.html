@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">TaskResult</span>(<a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a>&nbsp;task, boolean&nbsp;found, boolean&nbsp;buildSuccess, <a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a>&nbsp;testResult, float&nbsp;score)
+<div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">TaskResult</span>(<a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a>&nbsp;task, boolean&nbsp;found, boolean&nbsp;buildSuccess, boolean&nbsp;javadocSuccess, boolean&nbsp;checkstyleSuccess, <a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a>&nbsp;testResult, float&nbsp;score)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
 </section>
 <section class="summary">
@@ -90,9 +90,11 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.buzyurkin.model.Task,boolean,boolean,ru.nsu.buzyurkin.result.TestResult,float)" class="member-name-link">TaskResult</a><wbr>(<a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a>&nbsp;task,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.buzyurkin.model.Task,boolean,boolean,boolean,boolean,ru.nsu.buzyurkin.result.TestResult,float)" class="member-name-link">TaskResult</a><wbr>(<a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a>&nbsp;task,
  boolean&nbsp;found,
  boolean&nbsp;buildSuccess,
+ boolean&nbsp;javadocSuccess,
+ boolean&nbsp;checkstyleSuccess,
  <a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a>&nbsp;testResult,
  float&nbsp;score)</code></div>
 <div class="col-last even-row-color">
@@ -117,20 +119,30 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>buildSuccess</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#checkstyleSuccess()" class="member-name-link">checkstyleSuccess</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>checkstyleSuccess</code> record component.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#found()" class="member-name-link">found</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#found()" class="member-name-link">found</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of the <code>found</code> record component.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash code value for this object.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#javadocSuccess()" class="member-name-link">javadocSuccess</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the value of the <code>javadocSuccess</code> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>float</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#score()" class="member-name-link">score</a>()</code></div>
@@ -170,11 +182,13 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(ru.nsu.buzyurkin.model.Task,boolean,boolean,ru.nsu.buzyurkin.result.TestResult,float)">
+<section class="detail" id="&lt;init&gt;(ru.nsu.buzyurkin.model.Task,boolean,boolean,boolean,boolean,ru.nsu.buzyurkin.result.TestResult,float)">
 <h3>TaskResult</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TaskResult</span><wbr><span class="parameters">(<a href="../model/Task.html" title="class in ru.nsu.buzyurkin.model">Task</a>&nbsp;task,
  boolean&nbsp;found,
  boolean&nbsp;buildSuccess,
+ boolean&nbsp;javadocSuccess,
+ boolean&nbsp;checkstyleSuccess,
  <a href="TestResult.html" title="class in ru.nsu.buzyurkin.result">TestResult</a>&nbsp;testResult,
  float&nbsp;score)</span></div>
 <div class="block">Creates an instance of a <code>TaskResult</code> record class.</div>
@@ -183,6 +197,8 @@ loadScripts(document, 'script');</script>
 <dd><code>task</code> - the value for the <code>task</code> record component</dd>
 <dd><code>found</code> - the value for the <code>found</code> record component</dd>
 <dd><code>buildSuccess</code> - the value for the <code>buildSuccess</code> record component</dd>
+<dd><code>javadocSuccess</code> - the value for the <code>javadocSuccess</code> record component</dd>
+<dd><code>checkstyleSuccess</code> - the value for the <code>checkstyleSuccess</code> record component</dd>
 <dd><code>testResult</code> - the value for the <code>testResult</code> record component</dd>
 <dd><code>score</code> - the value for the <code>score</code> record component</dd>
 </dl>
@@ -267,6 +283,28 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the value of the <code>buildSuccess</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="javadocSuccess()">
+<h3>javadocSuccess</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">javadocSuccess</span>()</div>
+<div class="block">Returns the value of the <code>javadocSuccess</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>javadocSuccess</code> record component</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="checkstyleSuccess()">
+<h3>checkstyleSuccess</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">checkstyleSuccess</span>()</div>
+<div class="block">Returns the value of the <code>checkstyleSuccess</code> record component.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the value of the <code>checkstyleSuccess</code> record component</dd>
 </dl>
 </section>
 </li>
