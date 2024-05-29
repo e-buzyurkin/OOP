@@ -9,12 +9,13 @@ import ru.nsu.buzyurkin.result.TaskResult;
 /**
  * The ReportWriter class is responsible for printing the evaluation report.
  */
+@SuppressWarnings("LineLength")
 public class ReportWriter {
     private static String HEADER =
-            "┌────────────────────────────────┬────────────────────────────────┬───────┬───────┬─────────┬────────────┬────────────────────┬───────┬─────────────┐%n" +
-            "│                                │                                │       │       │         │            │       Tests        │       │             │%n" +
-            "│            Student             │           Task name            │ Found │ Build │ javadoc │ checkstyle ├──────┬──────┬──────┤ Score │ Total score │%n" +
-            "│                                │                                │       │       │         │            │ Pass │ Fail │ Skip │       │             │%n";
+            "┌────────────────────────────────┬────────────────────────────────┬───────┬───────┬─────────┬────────────┬────────────────────┬───────┬─────────────┐%n"
+          + "│                                │                                │       │       │         │            │       Tests        │       │             │%n"
+          + "│            Student             │           Task name            │ Found │ Build │ javadoc │ checkstyle ├──────┬──────┬──────┤ Score │ Total score │%n"
+          + "│                                │                                │       │       │         │            │ Pass │ Fail │ Skip │       │             │%n";
 
     private static String[][] TASK_SEP = {
             {
@@ -108,7 +109,8 @@ public class ReportWriter {
     }
 
     private void printTaskReport(TaskResult taskResult, String studentName,
-                                 float totalScore, String rowFormatString, String[][] separators) {
+                                 float totalScore, String rowFormatString,
+                                 String[][] separators) {
         String taskName = taskResult.task().getName();
         String foundStatus = taskResult.found() ? "+" : "-";
         String buildStatus = taskResult.buildSuccess() ? "+" : "-";
