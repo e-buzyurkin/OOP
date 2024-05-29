@@ -19,6 +19,7 @@ dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.7'
     implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
     implementation 'org.gradle:gradle-tooling-api:7.4.2'
+    implementation 'com.puppycrawl.tools:checkstyle:10.9.1'
 }
 
 test {

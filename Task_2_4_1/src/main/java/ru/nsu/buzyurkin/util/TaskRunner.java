@@ -1,30 +1,24 @@
 package ru.nsu.buzyurkin.util;
 
-
-
 import java.io.File;
 import java.util.*;
 
+import com.puppycrawl.tools.checkstyle.api.AuditListener;
+import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import lombok.Getter;
 
-
-
+import com.puppycrawl.tools.checkstyle.Checker;
+import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
+import com.puppycrawl.tools.checkstyle.PropertiesExpander;
+import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
+import com.puppycrawl.tools.checkstyle.api.Configuration;
 import org.gradle.tooling.BuildException;
 import org.gradle.tooling.BuildLauncher;
 import org.gradle.tooling.GradleConnector;
 import org.gradle.tooling.ProjectConnection;
 import org.gradle.tooling.TestExecutionException;
-import org.gradle.tooling.events.OperationDescriptor;
-import org.gradle.tooling.events.OperationType;
-import org.gradle.tooling.events.ProgressEvent;
-import org.gradle.tooling.events.ProgressListener;
-import org.gradle.tooling.events.test.JvmTestKind;
-import org.gradle.tooling.events.test.JvmTestOperationDescriptor;
-import org.gradle.tooling.events.test.TestFailureResult;
-import org.gradle.tooling.events.test.TestFinishEvent;
-import org.gradle.tooling.events.test.TestOperationResult;
-import org.gradle.tooling.events.test.TestSkippedResult;
-import org.gradle.tooling.events.test.TestSuccessResult;
+import org.gradle.tooling.events.*;
+import org.gradle.tooling.events.test.*;
 import ru.nsu.buzyurkin.git.Repository;
 import ru.nsu.buzyurkin.model.Assignment;
 import ru.nsu.buzyurkin.model.Config;
@@ -72,7 +66,12 @@ public class TaskRunner {
         boolean couldCheckout = repo.checkoutBranch(branch);
         if (!couldCheckout || !taskDirectory.exists()) {
             System.out.printf("Could not find %s%n", task.getName());
-            return new TaskResult(task, false, false, null, 0);
+            return new TaskResult(task, false,
+                    false,
+                    false,
+                    false,
+                    null,
+                    0);
         }
 
         ProjectConnection connection = GradleConnector
@@ -83,35 +82,78 @@ public class TaskRunner {
 
         float achievedScore = 0;
         boolean buildSuccessful = false;
+        boolean javadocSuccess = false;
+        boolean checkstyleSuccess = false;
         TestResult testResult = null;
 
-        System.out.printf("Building %s: ", task.getName());
         buildSuccessful = buildTask(connection);
-        if (buildSuccessful) {
-            System.out.printf("success%n");
-            achievedScore += task.getScore();
-            if (task.isRunTests()) {
-                System.out.printf("Testing %s: ", task.getName());
-                testResult = testTask(connection, task.getId());
-                if (testResult.buildSuccess() && testResult.testsFailed() == 0) {
-                    System.out.printf("success%n");
-                } else {
-                    System.out.printf("failure%n");
-                    achievedScore /= 2;
-                }
-            }
-        } else {
-            System.out.printf("failure%n");
+        if (!buildSuccessful) {
+            connection.close();
+            return new TaskResult(task, true,
+                    false,
+                    false,
+                    false,
+                    null,
+                    0);
         }
+        achievedScore += task.getScore();
+
+        if (task.isRunTests()) {
+            testResult = testTask(connection, task.getId());
+        }
+
+        javadocSuccess = createJavadoc(connection);
+
+        try {
+            checkstyleSuccess = runCheckstyle(allFilesList(taskDirectory)) > 0;
+        } catch (CheckstyleException e) {
+            throw new RuntimeException(e);
+        }
+
         connection.close();
 
-        return new TaskResult(task, true, buildSuccessful, testResult, achievedScore);
+        return new TaskResult(task, true,
+                buildSuccessful,
+                javadocSuccess,
+                checkstyleSuccess,
+                testResult,
+                achievedScore
+        );
     }
 
     private boolean buildTask(ProjectConnection connection) {
         BuildLauncher build = connection.newBuild().forTasks("assemble");
         try {
             build.run();
+            return true;
+        } catch (BuildException e) {
+            return false;
+        }
+    }
+
+    private int runCheckstyle(List<File> files) throws CheckstyleException {
+        File configFile = new File("../.github/google_checks.xml");
+        Configuration configuration =
+                ConfigurationLoader.loadConfiguration(
+                        configFile.getAbsolutePath(),
+                        new PropertiesExpander(new Properties()),
+                        ConfigurationLoader.IgnoredModulesOptions.OMIT);
+
+        AuditListenerImpl listener = new AuditListenerImpl();
+
+        Checker checker = new Checker();
+        checker.setModuleClassLoader(Thread.currentThread().getContextClassLoader());
+        checker.configure(configuration);
+        checker.addListener(listener);
+        checker.process(files);
+        checker.destroy();
+        return listener.getErrorCount();
+    }
+
+    private boolean createJavadoc(ProjectConnection connection) {
+        BuildLauncher javadoc = connection.newBuild().forTasks("javadoc");
+        try {
+            javadoc.run();
             return true;
         } catch (BuildException e) {
             return false;
@@ -133,6 +175,55 @@ public class TaskRunner {
             return listener.getResult();
         } catch (BuildException e) {
             return new TestResult(false, 0, 0, 0);
+        }
+    }
+
+    private List<File> allFilesList(File dir) {
+        List<File> list = new ArrayList<>();
+        for (final File fileEntry : dir.listFiles()) {
+            if (fileEntry.isDirectory()) {
+                list.addAll(allFilesList(fileEntry));
+            } else {
+                list.add(fileEntry);
+            }
+        }
+
+        return list;
+    }
+
+    private class AuditListenerImpl implements AuditListener {
+        private @Getter int errorCount;
+        private @Getter int exceptionCount;
+
+        public AuditListenerImpl() {
+            errorCount = 0;
+            exceptionCount = 0;
+        }
+
+        @Override
+        public void auditStarted(AuditEvent auditEvent) {
+        }
+
+        @Override
+        public void auditFinished(AuditEvent auditEvent) {
+        }
+
+        @Override
+        public void fileStarted(AuditEvent auditEvent) {
+        }
+
+        @Override
+        public void fileFinished(AuditEvent auditEvent) {
+        }
+
+        @Override
+        public void addError(AuditEvent event) {
+            errorCount++;
+        }
+
+        @Override
+        public void addException(AuditEvent event, Throwable throwable) {
+            exceptionCount++;
         }
     }
 
